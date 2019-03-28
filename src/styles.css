@@ -1,1 +1,125 @@
-/* You can add global styles to this file, and also import other style files */
+/* Conf globais */
+ * {
+ 	margin: 0;
+ 	padding: 0;
+ }
+
+body {
+	background-color: #303030;
+	color: white;
+	font-family: Arial;
+}
+
+#smn-topo{
+	text-align: center;
+	font-size: 20px;
+	font-family: Arial;
+	margin: auto;
+	color: #00c853;
+}
+
+
+#header{background-color: black!important;}
+
+#footer{
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    text-align: center;
+    height: 40px;
+    font-size:15px;
+    color: white;
+}
+
+.mat-tab-label{	width: 50%; }
+.mat-tab-label-content{color: white;font-size: 20px;}
+.mat-card{background-color: #424242 !important; }
+.mat-accent .mat-input-element{color: white;}
+.mat-button-wrapper{color: white; fot-size: 15px;}
+.mat-tab-group{	margin: 50px auto 0 auto;	}
+.snackar{background-color:black;}
+
+
+@media screen and (max-width: 480px){
+	/*tela de login ------------------------*/
+
+	.mat-tab-label{ width: 50%; }
+
+	.container{	padding: 5px; }
+
+	.mat-tab-group{	margin: 50px auto 0 auto;}
+
+	.mat-form-field{ width: 100%; }
+
+	.mat-flat-button{ width: 100%; }
+
+}
+ 
+@media screen and (min-width: 481px) and (max-width: 768px){
+	/*tela de login ------------------------*/
+
+	.mat-tab-label{
+		width: 50%;
+	}
+
+	.container{
+		padding: 10px;
+	}
+
+
+	.mat-form-field{
+		width: 100%;
+		margin: 20px 0;
+	} 
+
+	.mat-flat-button{
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1199px){
+/*tela de login ------------------------*/
+
+	.mat-tab-label{
+		width: 50%;
+	}
+
+	.container{
+		padding: 10px;
+		width: 60%;
+		display: flex;
+		margin: 0 auto;
+	}
+
+	.mat-tab-group{
+		margin-top: 50px;
+	}
+
+	.mat-form-field{
+		width: 100%;
+	} 
+
+	.mat-card{ width: 500px; padding: 10 40px!important;}
+
+	.mat-flat-button{
+		width: 100%;
+	}	
+}
+
+@media screen and (min-width: 1200px) {
+/*tela de login ------------------------*/
+	.mat-tab-label{	width: 50%;}
+
+	.container{
+		padding: 10px;
+		width: 60%;
+		display: flex;
+		margin: 0 auto;
+	}
+
+	.mat-card{ width: 500px; padding: 10 40px!important;}
+
+	.mat-form-field{ width: 100%;} 
+
+	.mat-flat-button{width: 100%;}	
+}

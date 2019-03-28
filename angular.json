@@ -23,7 +23,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              {
+              "input": "src/app-theme.scss"
+              }
             ],
             "scripts": [],
             "es5BrowserSupport": true
