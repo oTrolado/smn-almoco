@@ -16,12 +16,14 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { AuthInComponent } from './components/auth-in/auth-in/auth-in.component';
 import { AuthServiceService } from './services/auth-service.service';
- 
+import { CardapioComponent } from './components/cardapio/cardapio.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthInComponent,
+    CardapioComponent
   ],
   imports: [
     FormsModule,
@@ -37,7 +39,10 @@ import { AuthServiceService } from './services/auth-service.service';
     MatInputModule,
     MatButtonModule
   ],
-  providers: [AuthServiceService],
+  providers: [
+    AuthServiceService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,15 +10,27 @@ export class AuthServiceService {
   	
   }
 
+  private autenticado: boolean = false;
+
   	logar(user: String, usuario){
   		console.log('logar', usuario);
   		return this.http.post('http://localhost:3000/usuario/' + user, {usuario});
   		
   	}
+  	
  
   	cadastrar(usuario){
   		console.log('cadastrar', usuario);
   		return this.http.post('http://localhost:3000/usuario/', usuario);
 
   	} 
+
+  	validar(logado: boolean){
+  		console.log("Logado = " + logado);
+  		this.autenticado = logado;
+	}
+
+	isAutenticado(){
+		return this.autenticado;
+	}
 }

@@ -14,11 +14,11 @@ export class AuthInComponent implements OnInit {
 
   constructor(
   	private serv: AuthServiceService,
-  	private snack: MatSnackBar
+  	private snack: MatSnackBar,
+  	private router: Router
   	) { }
 
   public usuario: any = {};
-  public logado:boolean = false;
 
   ngOnInit() {
  
@@ -26,16 +26,15 @@ export class AuthInComponent implements OnInit {
  
   login() {
   		if(this.usuario.user != "" &&
-  			this.usuario.senha){
+  			this.usuario.senha!= ""){
 
   			let retorno: any;
   			retorno = this.serv.logar(this.usuario.user, this.usuario.senha);
   			retorno.subscribe(res => {
-  					this.logado = true;
   					this.usuario = res;
   					this.snack.open('Logado com sucesso ' + this.usuario.nome, 'Fechar', { duration: 2000 });
-  					console.log(this.usuario);
-  					console.log(res);
+  					this.serv.validar(true);	
+  					this.router.navigate(['cardapio']);
   				}, 
   				erro => { 
   					this.snack.open('Erro tente de novo mais tarde', 'Fechar', { duration: 2000 });
@@ -59,8 +58,7 @@ export class AuthInComponent implements OnInit {
 			console.log('singin');
 
 			let retorno: any =this.serv.cadastrar(this.usuario);
-			retorno.subscribe(
-				() => {
+			retorno.subscribe(res => {
 					this.snack.open('Agora você esta cadastrado :)' + this.usuario.nome, 'Fechar', { duration: 2000 });
 					this.usuario.user = null;
 					this.usuario.nome = null;
@@ -68,8 +66,17 @@ export class AuthInComponent implements OnInit {
 					this.usuario.email = null;
 				},
 				erro => {
-					this.snack.open('Erro tente de novo mais tarde', 'Fechar', { duration: 2000 });
-					console.log(erro);
+					if(erro.status == 201){
+						this.snack.open('Agora você esta cadastrado :) ' + this.usuario.nome, 'Fechar', { duration: 2000 });
+						this.usuario.user = null;
+						this.usuario.nome = null;
+						this.usuario.senha = null;
+						this.usuario.email = null;
+						this.router.navigate(['']);		
+					} else {
+						this.snack.open('Erro tente de novo mais tarde', 'Fechar', { duration: 2000 });						
+					}
+
 				}
 			);
 	  			
