@@ -33,92 +33,60 @@ body {
 
 .mat-tab-label{	width: 50%; }
 .mat-tab-label-content{color: white;font-size: 20px;}
+.mat-tab-group{	margin: 50px auto 0 auto; }
 .mat-card{background-color: #424242 !important; }
 .mat-accent .mat-input-element{color: white;}
-.mat-button-wrapper{color: white; fot-size: 15px;}
-.mat-tab-group{	margin: 50px auto 0 auto;	}
+.mat-button-wrapper{color: white; font-size: 15px;}
+.mat-form-field{ width: 100%; }
+
+.container{display: flex; flex-direction: column;}
 
 
 @media screen and (max-width: 480px){
 	/*tela de login ------------------------*/
 
-	.mat-tab-label{ width: 50%; }
-
-	.container{	padding: 5px; }
-
-	.mat-tab-group{	margin: 50px auto 0 auto;}
-
-	.mat-form-field{ width: 100%; }
+	.mat-tab-group{	margin: 50px auto 50px auto;}
 
 	.mat-flat-button{ width: 100%; }
+	
+	.mat-tab-group{ width: 100%; }
 
 }
- 
+
 @media screen and (min-width: 481px) and (max-width: 768px){
 	/*tela de login ------------------------*/
 
-	.mat-tab-label{
-		width: 50%;
-	}
+	.mat-form-field{ margin: 20px 0; } 
 
-	.container{
-		padding: 10px;
-	}
+	.mat-flat-button{ width: 100%; }
 
 
-	.mat-form-field{
-		width: 100%;
-		margin: 20px 0;
-	} 
-
-	.mat-flat-button{
-		width: 100%;
-	}
 }
 
 @media screen and (min-width: 769px) and (max-width: 1199px){
 /*tela de login ------------------------*/
 
-	.mat-tab-label{
-		width: 50%;
-	}
-
 	.container{
-		padding: 10px;
 		width: 60%;
 		display: flex;
 		margin: 0 auto;
 	}
 
-	.mat-tab-group{
-		margin-top: 50px;
-	}
+	.card-login{ width: 500px; padding: 10 40px!important;} 
 
-	.mat-form-field{
-		width: 100%;
-	} 
-
-	.mat-card{ width: 500px; padding: 10 40px!important;}
-
-	.mat-flat-button{
-		width: 100%;
-	}	
+	.mat-flat-button{width: 100%;}	
 }
 
 @media screen and (min-width: 1200px) {
 /*tela de login ------------------------*/
-	.mat-tab-label{	width: 50%;}
 
 	.container{
-		padding: 10px;
 		width: 60%;
 		display: flex;
-		margin: 0 auto;
+		margin: 30px auto;
 	}
 
-	.mat-card{ width: 500px; padding: 10 40px!important;}
+	.card-login{ width: 500px; padding: 10 40px!important;} 
 
-	.mat-form-field{ width: 100%;} 
-
-	.mat-flat-button{width: 100%;}	
+	.mat-flat-button{width: 100%;}
 }

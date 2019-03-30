@@ -12,16 +12,16 @@ export class AuthServiceService {
 
   private autenticado: boolean = false;
 
-  	logar(user: String, usuario){
+  	logar(usuario){
   		console.log('logar', usuario);
-  		return this.http.post('http://localhost:3000/usuario/' + user, {usuario});
+  		return this.http.post('http://cardapio-smn.herokuapp.com/usuario/' + usuario.user, usuario);
   		
   	}
   	
  
   	cadastrar(usuario){
   		console.log('cadastrar', usuario);
-  		return this.http.post('http://localhost:3000/usuario/', usuario);
+  		return this.http.post('http://cardapio-smn.herokuapp.com/usuario/', usuario);
 
   	} 
 

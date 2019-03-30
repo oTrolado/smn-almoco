@@ -1,7 +1,7 @@
 <div class="container" id="login">
    <mat-tab-group color="accent">
       <mat-tab label="Entrar">
-          <mat-card>
+          <mat-card class="card-login">
             <form id="login">
               <mat-form-field appearance="outline" color="accent" >
                 <mat-label>Usuário</mat-label>
@@ -16,7 +16,7 @@
           </mat-card>  
       </mat-tab>
       <mat-tab label="Cadastrar"> 
-        <mat-card>
+        <mat-card class="card-login">
           <form id="singin">
               <mat-form-field appearance="outline" color="accent" >
                 <mat-label>Usuário</mat-label>
@@ -33,6 +33,10 @@
               <mat-form-field appearance="outline" color="accent"  >
                 <mat-label>Senha</mat-label>
                 <input name="senha" matInput type="password" required="" placeholder="*****" [(ngModel)]="usuario.senha">
+              </mat-form-field>
+              <mat-form-field appearance="outline" color="accent"  >
+                <mat-label>Confirme a senha</mat-label>
+                <input name="confirma" matInput type="password" required="" placeholder="*****" [(ngModel)]="usuario.confirma">
               </mat-form-field>
               <button mat-flat-button color="accent" (click)="singin()"><strong>Cadastrar</strong></button>
             </form>
