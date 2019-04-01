@@ -20,6 +20,7 @@ body {
 
 
 #header{background-color: black!important;}
+#menu{ position:  absolute; float: left; z-index: 1;}
 
 #footer{
     position: fixed;

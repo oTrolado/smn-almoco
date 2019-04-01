@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthServiceService } from './services/auth-service.service';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -6,6 +8,16 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'SMN';
+
+  mostrarMenu: boolean = false;
+
+  constructor(private authService: AuthServiceService, ){  }
+
+  ngOnInit(){
+  	this.authService.mostrarMenuEmitter.subscribe(
+  		mostrar => this.mostrarMenu = mostrar
+	);
+  }
 }

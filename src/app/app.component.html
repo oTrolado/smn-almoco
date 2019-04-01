@@ -1,4 +1,7 @@
 <mat-toolbar color="primary" id="header">
+  <div id="menu" *ngIf="mostrarMenu">
+  	<mat-icon aria-label="Menu icon" id="iconeMenu" color="primary">menu</mat-icon>
+  </div>
   <span id="smn-topo" >{{ title }}</span>
 </mat-toolbar>
 

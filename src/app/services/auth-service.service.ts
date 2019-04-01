@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -9,6 +9,8 @@ export class AuthServiceService {
   constructor(private http: HttpClient) { 
   	
   }
+
+  mostrarMenuEmitter = new EventEmitter<boolean>();
 
   private autenticado: boolean = false;
 
@@ -28,6 +30,11 @@ export class AuthServiceService {
   	validar(logado: boolean){
   		console.log("Logado = " + logado);
   		this.autenticado = logado;
+      if(this.autenticado == true){
+        this.mostrarMenuEmitter.emit(true);
+      } else {
+        this.mostrarMenuEmitter.emit(false);
+      }
 	}
 
 	isAutenticado(){

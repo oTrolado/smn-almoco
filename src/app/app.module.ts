@@ -13,6 +13,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AuthInComponent } from './components/auth-in/auth-in/auth-in.component';
 import { AuthServiceService } from './services/auth-service.service';
@@ -37,7 +38,8 @@ import { AuthGuard } from './guards/auth.guard';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [
     AuthServiceService,
