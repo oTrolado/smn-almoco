@@ -14,6 +14,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+
 
 import { AuthInComponent } from './components/auth-in/auth-in/auth-in.component';
 import { AuthServiceService } from './services/auth-service.service';
@@ -35,11 +39,14 @@ import { AuthGuard } from './guards/auth.guard';
     MatSnackBarModule,
     MatToolbarModule,
     MatTabsModule,
+    MatListModule,
+    MatDividerModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule
   ],
   providers: [
     AuthServiceService,

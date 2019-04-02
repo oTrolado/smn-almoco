@@ -20,18 +20,19 @@ body {
 
 
 #header{background-color: black!important;}
-#menu{ position:  absolute; float: left; z-index: 1;}
+#menu{ position:  fixed; float: left; z-index: 2;}
 
 #footer{
     position: fixed;
     bottom: 0;
     z-index: 2;
     text-align: center;
-    height: 40px;
+    height: 5vh;
     font-size:15px;
     color: white;
 }
 
+.mat-toolar{ height: 8vh; }
 .mat-tab-label{	width: 50%; }
 .mat-tab-label-content{color: white;font-size: 20px;}
 .mat-tab-group{	margin: 50px auto 0 auto; }
@@ -39,6 +40,8 @@ body {
 .mat-accent .mat-input-element{color: white;}
 .mat-button-wrapper{color: white; font-size: 15px;}
 .mat-form-field{ width: 100%; }
+.mat-drawer-content{ height: 95vh; }
+.mat-drawer-container{ height: 92vh; }
 
 .container{display: flex; flex-direction: column;}
 
@@ -46,11 +49,11 @@ body {
 @media screen and (max-width: 480px){
 	/*tela de login ------------------------*/
 
-	.mat-tab-group{	margin: 50px auto 50px auto;}
+	.mat-tab-group{	width: 100%; margin: 50px auto 50px auto;}
 
 	.mat-flat-button{ width: 100%; }
 	
-	.mat-tab-group{ width: 100%; }
+	.mat-drawer{ width: 80%; }
 
 }
 
@@ -61,7 +64,7 @@ body {
 
 	.mat-flat-button{ width: 100%; }
 
-
+	.mat-drawer{ width: 50%; }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1199px){
@@ -76,6 +79,9 @@ body {
 	.card-login{ width: 500px; padding: 10 40px!important;} 
 
 	.mat-flat-button{width: 100%;}	
+
+	.mat-drawer{ width: 40%; }
+
 }
 
 @media screen and (min-width: 1200px) {
@@ -90,4 +96,6 @@ body {
 	.card-login{ width: 500px; padding: 10 40px!important;} 
 
 	.mat-flat-button{width: 100%;}
+
+	.mat-drawer{ width: 30%; }
 }
