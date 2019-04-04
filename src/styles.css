@@ -18,6 +18,7 @@ body {
 	color: #00c853;
 }
 
+a{ text-decoration: none; }
 
 #header{background-color: black!important;}
 #menu{ position:  fixed; float: left; z-index: 2;}
@@ -31,6 +32,10 @@ body {
     font-size:15px;
     color: white;
 }
+
+.navs{margin-top: 15vh;}
+	.navs .mat-list-item:hover{ background-color: white; color: #00c853; transition: 1s;}
+	.navs .mat-list-item{ transition: 1s;}
 
 .mat-toolar{ height: 8vh; }
 .mat-tab-label{	width: 50%; }
@@ -65,6 +70,10 @@ body {
 	.mat-flat-button{ width: 100%; }
 
 	.mat-drawer{ width: 50%; }
+
+	.tab-cardapio{ padding: 20px; }
+	.tab-cardapio th{ font-size: 25px; padding: 20px;}
+	.tab-cardapio td{ font-size: 25px; padding: 20px; }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1199px){
@@ -80,7 +89,11 @@ body {
 
 	.mat-flat-button{width: 100%;}	
 
-	.mat-drawer{ width: 40%; }
+	.mat-drawer{ width: 30%; }
+
+	.tab-cardapio{ padding: 20px; }
+	.tab-cardapio th{ font-size: 25px; padding: 20px;}
+	.tab-cardapio td{ font-size: 25px; padding: 20px; }
 
 }
 
@@ -97,5 +110,9 @@ body {
 
 	.mat-flat-button{width: 100%;}
 
-	.mat-drawer{ width: 30%; }
+	.mat-drawer{ width: 20%; }
+
+	.tab-cardapio{ padding: 20px; }
+	.tab-cardapio th{ font-size: 25px; padding: 20px; }
+	.tab-cardapio td{ font-size: 25px; padding: 20px; }
 }

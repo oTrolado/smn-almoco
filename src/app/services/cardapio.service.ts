@@ -10,7 +10,7 @@ export class CardapioService {
 
   listar(){
   	console.log("Lintando os cardapios");
-	return this.http.get('http://cardapio-smn.herokuapp.com/carcapio/');
+	return this.http.get('http://cardapio-smn.herokuapp.com/cardapio/');
 
   }
 

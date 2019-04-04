@@ -4,40 +4,34 @@
 
 	<mat-tab-group color="accent">
 
-		<mat-tab label="Segunda">
+		<mat-tab *ngFor="let cardapio of cardapios" [label]="cardapio.nome_dia_da_semana">
 
 			<mat-card class="dia-semana">
+				<table class="tab-cardapio">
+					<tr><th>Prato Principal</th><td>
+						<mat-form-field>
+						    <mat-select [(ngModel)]="cardapio.pratoPrincipal">
+						      <mat-option value="{{ cardapio.pratoPrincipal }}" selected="selected">
+						        {{ cardapio.pratoPrincipal }}
+						      </mat-option>
+						      <mat-option value="opcao2">
+						        Opção 2
+						      </mat-option>
+						      <mat-option value="opcao3">
+						        Opção 3
+						      </mat-option>
+						    </mat-select>
+						</mat-form-field>
+					</td></tr>
+					<tr><th>Guarnição 1</th><td>{{ cardapio.guarnicao1 }}</td></tr>
+					<tr><th>Guarnição 2</th><td>{{ cardapio.guarnicao2 }}</td></tr>
+					<tr><th>Salada</th><td>{{ cardapio.salada }}</td></tr>
+					<tr><th>Sobremesa</th><td>{{ cardapio.sobremesa }}</td></tr>
+					<tr><th>Data</th><td>{{ cardapio.data }}</td></tr>
+				</table>
 			</mat-card>
 
 		</mat-tab>
-
-		<mat-tab label="Terça">
-
-			<mat-card class="dia-semana">
-			</mat-card>
-
-		</mat-tab>
-
-		<mat-tab label="Quarta">
-
-			<mat-card class="dia-semana">
-			</mat-card>
-
-		</mat-tab>
-
-		<mat-tab label="Quinta">
-
-			<mat-card class="dia-semana">
-			</mat-card>
-
-		</mat-tab>
-
-		<mat-tab label="Sexta">
-
-			<mat-card class="dia-semana">
-			</mat-card>
-
-		</mat-tab>
-
+		
 	</mat-tab-group>
 </div>

@@ -5,16 +5,21 @@
 	  	</mat-icon>
 	</button>
   </div>
-  <span id="smn-topo" >{{ title }}</span>
+  <span id="smn-topo" class="">{{ title }}</span>
 </mat-toolbar>
 
 <mat-drawer-container class="example-container" [hasBackdrop]="true">  		<mat-drawer #drawer [mode]="over">
-		<mat-list>
-		  <mat-list-item>Cardápio</mat-list-item>
-		  <mat-divider></mat-divider>
-		  <mat-list-item>Sugestões</mat-list-item>
-		  <mat-divider></mat-divider>
-		  <mat-list-item>Sair</mat-list-item>
+		
+		<mat-list class="navs subheading-2">
+			<nav>
+				<mat-divider></mat-divider>
+		  		<a routerLink="/cardapio"><mat-list-item>Cardápio</mat-list-item></a>
+		  		<mat-divider></mat-divider>
+		  		<a><mat-list-item>Sugestões</mat-list-item></a>
+		  		<mat-divider></mat-divider>
+		  		<a><mat-list-item>Sair</mat-list-item></a>
+		  		<mat-divider></mat-divider>
+			</nav>
 		</mat-list>
 	</mat-drawer>     
 	<mat-drawer-content>

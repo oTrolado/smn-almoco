@@ -17,12 +17,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
-
+import {MatTableModule} from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
 
 import { AuthInComponent } from './components/auth-in/auth-in/auth-in.component';
 import { AuthServiceService } from './services/auth-service.service';
 import { CardapioComponent } from './components/cardapio/cardapio.component';
 import { AuthGuard } from './guards/auth.guard';
+import { CardapioService} from './services/cardapio.service';
 
 @NgModule({
   declarations: [
@@ -46,11 +48,14 @@ import { AuthGuard } from './guards/auth.guard';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MatSidenavModule
+    MatSelectModule,
+    MatSidenavModule,
+    MatTableModule
   ],
   providers: [
     AuthServiceService,
-    AuthGuard
+    AuthGuard,
+    CardapioService
   ],
   bootstrap: [AppComponent]
 })
