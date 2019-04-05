@@ -93,12 +93,13 @@ export class AuthInComponent implements OnInit {
   			retorno.subscribe(res => {
   					this.usuario = res;
   					this.snack.open('Logado com sucesso ' + this.usuario.nome, 'Fechar', { duration: 3000 });
-  					this.serv.validar(true);	
+  					this.serv.validar(true, this.usuario);	
   					this.router.navigate(['cardapio']);
   				}, 
   				erro => { 
   					this.snack.open('Erro tente de novo mais tarde', 'Fechar', { duration: 3000 });
   					console.error(erro);
+  					this.usuario.senha = "";
   				}
   			);
 
@@ -132,6 +133,12 @@ export class AuthInComponent implements OnInit {
 
 	public getUsuario(){
 		return this.usuario;
+	}
+
+	public logOut(){
+		this.usuario = {};
+		this.serv.validar(false, this.usuario);	
+		this.router.navigate(['']);
 	}
  
 }

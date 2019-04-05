@@ -12,6 +12,7 @@ export class AuthServiceService {
 
   mostrarMenuEmitter = new EventEmitter<boolean>();
 
+  private usuario: any = {};
   private autenticado: boolean = false;
 
   	logar(usuario){
@@ -27,10 +28,11 @@ export class AuthServiceService {
 
   	} 
 
-  	validar(logado: boolean){
+  	validar(logado: boolean, usuario){
   		console.log("Logado = " + logado);
   		this.autenticado = logado;
       if(this.autenticado == true){
+        this.usuario = usuario;
         this.mostrarMenuEmitter.emit(true);
       } else {
         this.mostrarMenuEmitter.emit(false);
@@ -40,4 +42,8 @@ export class AuthServiceService {
 	isAutenticado(){
 		return this.autenticado;
 	}
+
+  getUser(){
+    return this.usuario;
+  }
 }

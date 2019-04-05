@@ -55,7 +55,8 @@ import { CardapioService} from './services/cardapio.service';
   providers: [
     AuthServiceService,
     AuthGuard,
-    CardapioService
+    CardapioService,
+    AuthInComponent
   ],
   bootstrap: [AppComponent]
 })

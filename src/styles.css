@@ -22,6 +22,7 @@ a{ text-decoration: none; }
 
 #header{background-color: black!important;}
 #menu{ position:  fixed; float: left; z-index: 2;}
+#nome-menu{ padding: 10px; float: right;}
 
 #footer{
     position: fixed;
@@ -35,7 +36,7 @@ a{ text-decoration: none; }
 
 .navs{margin-top: 15vh;}
 	.navs .mat-list-item:hover{ background-color: white; color: #00c853; transition: 1s;}
-	.navs .mat-list-item{ transition: 1s;}
+	.navs .mat-list-item{font-size: 18px; transition: 1s;}
 
 .mat-toolar{ height: 8vh; }
 .mat-tab-label{	width: 50%; }
@@ -47,6 +48,7 @@ a{ text-decoration: none; }
 .mat-form-field{ width: 100%; }
 .mat-drawer-content{ height: 95vh; }
 .mat-drawer-container{ height: 92vh; }
+.mat-drawer-inner-container{ font-size: 18px; }
 
 .container{display: flex; flex-direction: column;}
 
