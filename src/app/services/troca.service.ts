@@ -10,8 +10,8 @@ export class TrocaService {
   constructor(private http: HttpClient) { }
 
   trocar(troca: any){
-  	console.log(troca);
-  	//return this.http.post();
+  	console.log(troca);	
+  	return this.http.post('http://cardapio-smn.herokuapp.com/troca/', troca);
   }
   
 }
