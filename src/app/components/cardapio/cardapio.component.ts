@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CardapioService } from '../../services/cardapio.service';
+import { AuthServiceService } from './../../services/auth-service.service';
+import { TrocaService } from './../../services/troca.service';
 
 @Component({
   selector: 'app-cardapio',
@@ -8,10 +10,15 @@ import { CardapioService } from '../../services/cardapio.service';
 })
 export class CardapioComponent implements OnInit {
 
-  constructor(private cardServ: CardapioService) { }
+  constructor(
+  	private cardServ: CardapioService,
+  	private authServ: AuthServiceService,
+  	private trocaServ: TrocaService
+  	) { }
 
   public cardapios: any = {};
   private dias: any = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado"];
+  private usuario: any = this.authServ.getUser();
 
   ngOnInit() {
   	this.listar();
@@ -50,10 +57,25 @@ export class CardapioComponent implements OnInit {
   	console.log(this.cardapios);
   	this.cardapios.map((cardapio) =>{
   		if(cardapio.check == true){
-  			console.log("Desistiu de amloçar na "+ cardapio.nome_dia_da_semana);
+  			
+  			let troca: any = {
+  				idUsuario: this.usuario._id,
+  				solicitante: this.usuario.nome,
+  				data: cardapio.data,
+  				escolha: "desistiu"
+  			};
+  			this.trocaServ.trocar(troca);
+
 
   		} else if( cardapio.escolha != cardapio.pratoPrincipal){
-  			console.log("Realizando troca para "+ cardapio.nome_dia_da_semana);
+  			
+  			let troca: any = {
+  				idUsuario: this.usuario._id,
+  				solicitante: this.usuario.nome,
+  				data: cardapio.data,
+  				escolha: cardapio.escolha
+  			}; 
+  			this.trocaServ.trocar(troca);
 
   		}
   	});
