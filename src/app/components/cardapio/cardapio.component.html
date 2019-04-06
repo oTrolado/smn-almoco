@@ -9,8 +9,8 @@
 			<mat-card class="dia-semana">
 				<table class="tab-cardapio">
 					<tr><th>Prato Principal</th><td>
-						<mat-form-field>
-						    <mat-select [(ngModel)]="cardapio.pratoPrincipal">
+						<mat-form-field color="accent">
+						    <mat-select [(ngModel)]="cardapio.escolha">
 						      <mat-option value="{{ cardapio.pratoPrincipal }}" selected="selected">
 						        {{ cardapio.pratoPrincipal }}
 						      </mat-option>
@@ -29,9 +29,11 @@
 					<tr><th>Sobremesa</th><td>{{ cardapio.sobremesa }}</td></tr>
 					<tr><th>Data</th><td>{{ cardapio.data }}</td></tr>
 				</table>
+				<mat-checkbox [(ngModel)]="cardapio.check">Não vou almoçar aqui!</mat-checkbox>
 			</mat-card>
-
+			
 		</mat-tab>
 		
 	</mat-tab-group>
+	<button mat-flat-button color="accent" (click)="confirma()"><strong>Confirmar</strong></button>
 </div>

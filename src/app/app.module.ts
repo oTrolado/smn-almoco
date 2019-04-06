@@ -19,6 +19,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { AuthInComponent } from './components/auth-in/auth-in/auth-in.component';
 import { AuthServiceService } from './services/auth-service.service';
@@ -41,6 +42,7 @@ import { CardapioService} from './services/cardapio.service';
     MatSnackBarModule,
     MatToolbarModule,
     MatTabsModule,
+    MatCheckboxModule,
     MatListModule,
     MatDividerModule,
     MatCardModule,

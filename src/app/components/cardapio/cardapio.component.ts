@@ -27,7 +27,9 @@ export class CardapioComponent implements OnInit {
   				...cardapio,
   				nome_dia_da_semana: this.dias[new Date(cardapio.data).getDay()],
   				dia_da_semana: new Date(cardapio.data).getDay(),
-  				data: new Date(cardapio.data).toLocaleDateString()
+  				data: new Date(cardapio.data).toLocaleDateString(),
+  				escolha: cardapio.pratoPrincipal,
+  				check: false
   			})).sort((a, b) => {
 		  				if(a.dia_da_semana > b.dia_da_semana) {
 		  					return 1;
@@ -42,5 +44,18 @@ export class CardapioComponent implements OnInit {
   		erro => {
   			console.log(erro);
 		 });
+  }
+
+  confirma(){
+  	console.log(this.cardapios);
+  	this.cardapios.map((cardapio) =>{
+  		if(cardapio.check == true){
+  			console.log("Desistiu de amloçar na "+ cardapio.nome_dia_da_semana);
+
+  		} else if( cardapio.escolha != cardapio.pratoPrincipal){
+  			console.log("Realizando troca para "+ cardapio.nome_dia_da_semana);
+
+  		}
+  	});
   }
 }

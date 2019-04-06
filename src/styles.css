@@ -32,6 +32,7 @@ a{ text-decoration: none; }
     height: 5vh;
     font-size:15px;
     color: white;
+    background-color: #009624!important;
 }
 
 .navs{margin-top: 15vh;}
@@ -49,14 +50,14 @@ a{ text-decoration: none; }
 .mat-drawer-content{ height: 95vh; }
 .mat-drawer-container{ height: 92vh; }
 .mat-drawer-inner-container{ font-size: 18px; }
-
+.mat-display-3{text-align: center;}
 .container{display: flex; flex-direction: column;}
 
 
 @media screen and (max-width: 480px){
 	/*tela de login ------------------------*/
 
-	.mat-tab-group{	width: 100%; margin: 50px auto 50px auto;}
+	.mat-tab-group{	width: 100%; margin: 50px auto 5px auto;}
 
 	.mat-flat-button{ width: 100%; }
 	
@@ -72,6 +73,8 @@ a{ text-decoration: none; }
 	.mat-flat-button{ width: 100%; }
 
 	.mat-drawer{ width: 50%; }
+
+	/*cardapio------------------------------*/
 
 	.tab-cardapio{ padding: 20px; }
 	.tab-cardapio th{ font-size: 25px; padding: 20px;}
@@ -92,7 +95,7 @@ a{ text-decoration: none; }
 	.mat-flat-button{width: 100%;}	
 
 	.mat-drawer{ width: 30%; }
-
+/*cardapio------------------------------*/
 	.tab-cardapio{ padding: 20px; }
 	.tab-cardapio th{ font-size: 25px; padding: 20px;}
 	.tab-cardapio td{ font-size: 25px; padding: 20px; }
@@ -113,7 +116,7 @@ a{ text-decoration: none; }
 	.mat-flat-button{width: 100%;}
 
 	.mat-drawer{ width: 20%; }
-
+/*cardapio------------------------------*/
 	.tab-cardapio{ padding: 20px; }
 	.tab-cardapio th{ font-size: 25px; padding: 20px; }
 	.tab-cardapio td{ font-size: 25px; padding: 20px; }
