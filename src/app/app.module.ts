@@ -26,12 +26,14 @@ import { AuthServiceService } from './services/auth-service.service';
 import { CardapioComponent } from './components/cardapio/cardapio.component';
 import { AuthGuard } from './guards/auth.guard';
 import { CardapioService} from './services/cardapio.service';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthInComponent,
-    CardapioComponent
+    CardapioComponent,
+    FeedbackComponent
   ],
   imports: [
     FormsModule,

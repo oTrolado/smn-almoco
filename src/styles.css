@@ -32,7 +32,7 @@ a{ text-decoration: none; }
     height: 5vh;
     font-size:15px;
     color: white;
-    background-color: #009624!important;
+    background-color: #00c853!important;
 }
 
 .navs{margin-top: 15vh;}
@@ -50,7 +50,7 @@ a{ text-decoration: none; }
 .mat-drawer-content{ height: 95vh; }
 .mat-drawer-container{ height: 92vh; }
 .mat-drawer-inner-container{ font-size: 18px; }
-.mat-display-3{text-align: center;}
+.mat-display-3{text-align: center; margin-top: 20px;}
 .container{display: flex; flex-direction: column;}
 
 

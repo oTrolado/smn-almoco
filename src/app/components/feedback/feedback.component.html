@@ -1,0 +1,16 @@
+<div class="container" id="feedback">
+	<h1 class="mat-display-3"> Sugestões </h1>
+	<mat-card>
+		<mat-form-field>
+		  <mat-label>Tipo de sugestão</mat-label>
+		  <mat-select [(ngModel)]="sugestao.tipo" color="accent">
+		    <mat-option value="bug">
+		    	Bugs
+		    </mat-option>
+		    <mat-option value="sugestao">
+		    	Sugestões
+		    </mat-option>
+		  </mat-select>
+		</mat-form-field>
+	</mat-card>
+</div>

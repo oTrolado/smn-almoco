@@ -18,7 +18,7 @@
 				<mat-divider></mat-divider>
 		  		<a routerLink="/cardapio"><mat-list-item>Cardápio</mat-list-item></a>
 		  		<mat-divider></mat-divider>
-		  		<a routerLink="/cardapio"><mat-list-item>Sugestões</mat-list-item></a>
+		  		<a routerLink="/feedback"><mat-list-item>Sugestões</mat-list-item></a>
 		  		<mat-divider></mat-divider>
 		  		<a routerLink="/cardapio" (click)="drawer.toggle(); logOut()"><mat-list-item>Sair</mat-list-item></a>
 		  		<mat-divider></mat-divider>
@@ -29,7 +29,7 @@
 		<router-outlet></router-outlet>
 
 	
-		<mat-toolbar  id="footer">
+		<mat-toolbar  id="footer" color="accent">
 		    Time de Estágio
 		</mat-toolbar>
     </mat-drawer-content>       
