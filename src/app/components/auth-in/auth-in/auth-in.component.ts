@@ -110,7 +110,6 @@ export class AuthInComponent implements OnInit {
 		
 		if (this.validaCadastro()){
 
-			console.log('singin');
 
 			let retorno: any =this.serv.cadastrar(this.usuario);
 			retorno.subscribe(res => {

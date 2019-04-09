@@ -27,13 +27,17 @@ import { CardapioComponent } from './components/cardapio/cardapio.component';
 import { AuthGuard } from './guards/auth.guard';
 import { CardapioService} from './services/cardapio.service';
 import { FeedbackComponent } from './components/feedback/feedback.component';
+import { CardapiosComponent } from './components/gerenciar/cardapios/cardapios.component';
+import { PedidosComponent } from './components/gerenciar/pedidos/pedidos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthInComponent,
     CardapioComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    CardapiosComponent,
+    PedidosComponent
   ],
   imports: [
     FormsModule,
