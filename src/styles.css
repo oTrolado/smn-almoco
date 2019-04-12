@@ -57,7 +57,7 @@ a{ text-decoration: none; }
 @media screen and (max-width: 480px){
 	/*tela de login ------------------------*/
 
-	.mat-tab-group{	width: 100%; margin: 50px auto 5px auto;}
+	.mat-tab-group{	width: 100%; margin: 25px auto 5px auto;}
 
 	.mat-flat-button{ width: 100%; }
 	

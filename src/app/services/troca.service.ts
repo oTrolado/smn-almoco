@@ -16,33 +16,42 @@ export class TrocaService {
   }
 
   atualizar(troca: any){
-  	return this.http.put('http://cardapio-smn.herokuapp.com/troca/' + troca._id, troca);
+  	console.log('atualizar');
+  	return this.http.put('http://cardapio-smn.herokuapp.com/troca/', troca);
   }
 
 
-  listar(id: String){
-  	return this.http.get('http://cardapio-smn.herokuapp.com/troca/' + id);	
+  listar(user){
+  	return this.http.post('http://cardapio-smn.herokuapp.com/troca/user', user);	
+  	console.log('listar');
   }
 
-  trocar(troca: any){
-  	let retorno:any = this.listar(troca.user);
+  trocar(troca: any, trocas:any){
+
   	let check:boolean = false;
+  		console.log('trocar ' + trocas)
 
-  	retorno.subscribe(res => {
-  		let pedidos = res;
+  		let pedidos = trocas;
+  		console.log(pedidos);
   		pedidos.map(pedido => {
-  			if(pedido.cardapio._id == troca.cardapio){
+  			if(pedido.cardapio == troca.cardapio){
+  				console.log('Atualizar');
   				check = true;
-  				return this.atualizar(troca);
-  			}
+  				troca = {
+  					...troca,
+  					_id: pedido._id
+  				}
+  			} 
   		});
   		if(check == false){
+  			console.log('Criar')
   			return this.criar(troca);
+  			
+  		} else {
+  			console.log(troca);
+  			return this.atualizar(troca);
   		}
-  	}, erro => {
-  		console.log(erro);
-  		return erro;
-  	});
+  
   }
   
 }
