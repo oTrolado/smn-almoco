@@ -16,20 +16,17 @@ export class AuthServiceService {
   private autenticado: boolean = false;
 
   	logar(usuario){
-  		console.log('logar', usuario);
   		return this.http.post('http://cardapio-smn.herokuapp.com/usuario/' + usuario.user, usuario);
   		
   	}
   	
  
   	cadastrar(usuario){
-  		console.log('cadastrar', usuario);
   		return this.http.post('http://cardapio-smn.herokuapp.com/usuario/', usuario);
 
   	} 
 
   	validar(logado: boolean, usuario){
-  		console.log("Logado = " + logado);
   		this.autenticado = logado;
       if(this.autenticado == true){
         this.usuario = usuario;

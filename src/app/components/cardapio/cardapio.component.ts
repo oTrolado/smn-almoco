@@ -90,10 +90,12 @@ export class CardapioComponent implements OnInit {
 
           retorno.subscribe(res => {
             console.log(cardapio.nome_dia_da_semana + ' atualisado');
+            this.snack.open('Sucesso ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
           },
           erro => {
             console.log(erro);
             if(erro.status == 201){
+              this.snack.open('Sucesso ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
               console.log(cardapio.nome_dia_da_semana + ' atualisado');    
             } else {
               this.snack.open('Erro ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });

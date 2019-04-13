@@ -20,16 +20,15 @@ body {
 
 a{ text-decoration: none; }
 
-#header{background-color: black!important;}
+#header{background-color: black!important; height: 7vh;}
 #menu{ position:  fixed; float: left; z-index: 2;}
 #nome-menu{ padding: 10px; float: right;}
 
 #footer{
-    position: fixed;
     bottom: 0;
     z-index: 2;
     text-align: center;
-    height: 5vh;
+    height: 7vh;
     font-size:15px;
     color: white;
     background-color: #00c853!important;
@@ -48,10 +47,9 @@ a{ text-decoration: none; }
 .mat-button-wrapper{color: white; font-size: 15px;}
 .mat-form-field{ width: 100%; }
 .mat-drawer-content{ height: 95vh; }
-.mat-drawer-container{ height: 92vh; }
 .mat-drawer-inner-container{ font-size: 18px; }
 .mat-display-3{text-align: center; margin-top: 20px;}
-.container{display: flex; flex-direction: column;}
+.container{display: flex; flex-direction: column; height: 86vh;}
 
 
 @media screen and (max-width: 480px){
@@ -108,7 +106,7 @@ a{ text-decoration: none; }
 	.container{
 		width: 60%;
 		display: flex;
-		margin: 30px auto;
+		margin: auto;
 	}
 
 	.card-login{ width: 500px; padding: 10 40px!important;} 
