@@ -18,6 +18,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
@@ -57,6 +58,7 @@ import { PedidosComponent } from './components/gerenciar/pedidos/pedidos.compone
     MatButtonModule,
     MatIconModule,
     MatSelectModule,
+    MatProgressSpinnerModule,
     MatSidenavModule,
     MatTableModule
   ],
@@ -64,7 +66,8 @@ import { PedidosComponent } from './components/gerenciar/pedidos/pedidos.compone
     AuthServiceService,
     AuthGuard,
     CardapioService,
-    AuthInComponent
+    AuthInComponent,
+    AppComponent
   ],
   bootstrap: [AppComponent]
 })

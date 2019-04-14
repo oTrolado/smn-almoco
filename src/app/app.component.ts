@@ -10,7 +10,7 @@ import { AuthInComponent } from './components/auth-in/auth-in/auth-in.component'
 })
 export class AppComponent implements OnInit{
   title = 'SMN';
-
+  progress: boolean = false;
   mostrarMenu: boolean = false;
   usuario: any = {};
 
@@ -26,10 +26,15 @@ export class AppComponent implements OnInit{
         this.mostrarMenu = res;
         this.usuario = this.authService.getUser();
       }
-	);
+	  );
+    this.authService.progressEmitter.subscribe(res => {
+      this.progress = res;
+      console.log(res+" teste "+this.progress);
+    });
   }
 
   logOut(){
     this.authIn.logOut();
   }
+
 }

@@ -11,17 +11,20 @@ export class AuthServiceService {
   }
 
   mostrarMenuEmitter = new EventEmitter<boolean>();
+  progressEmitter = new EventEmitter<boolean>();
 
   private usuario: any = {};
   private autenticado: boolean = false;
 
   	logar(usuario){
+      this.progressEmitter.emit(true);
   		return this.http.post('http://cardapio-smn.herokuapp.com/usuario/' + usuario.user, usuario);
   		
   	}
   	
  
   	cadastrar(usuario){
+      this.progressEmitter.emit(true);
   		return this.http.post('http://cardapio-smn.herokuapp.com/usuario/', usuario);
 
   	} 
@@ -30,6 +33,7 @@ export class AuthServiceService {
   		this.autenticado = logado;
       if(this.autenticado == true){
         this.usuario = usuario;
+        this.offProgress();
         this.mostrarMenuEmitter.emit(true);
       } else {
         this.mostrarMenuEmitter.emit(false);
@@ -42,5 +46,8 @@ export class AuthServiceService {
 
   getUser(){
     return this.usuario;
+  }
+  offProgress(){
+    this.progressEmitter.emit(false);
   }
 }
