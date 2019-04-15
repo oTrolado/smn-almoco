@@ -30,6 +30,8 @@ import { CardapioService} from './services/cardapio.service';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { CardapiosComponent } from './components/gerenciar/cardapios/cardapios.component';
 import { PedidosComponent } from './components/gerenciar/pedidos/pedidos.component';
+import { ImadminGuard } from './guards/imadmin.guard';
+import { AlterarCardapioComponent } from './components/adm/alterar-cardapio/alterar-cardapio.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { PedidosComponent } from './components/gerenciar/pedidos/pedidos.compone
     CardapioComponent,
     FeedbackComponent,
     CardapiosComponent,
-    PedidosComponent
+    PedidosComponent,
+    AlterarCardapioComponent
   ],
   imports: [
     FormsModule,
@@ -65,6 +68,7 @@ import { PedidosComponent } from './components/gerenciar/pedidos/pedidos.compone
   providers: [
     AuthServiceService,
     AuthGuard,
+    ImadminGuard,
     CardapioService,
     AuthInComponent,
     AppComponent

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthServiceService } from './services/auth-service.service';
 import { HttpClient } from '@angular/common/http';
 import { AuthInComponent } from './components/auth-in/auth-in/auth-in.component';
-
+import { ProgressService } from './services/progress.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,8 +16,8 @@ export class AppComponent implements OnInit{
 
   constructor(
     private authService: AuthServiceService, 
-    private authIn: AuthInComponent
-    
+    private authIn: AuthInComponent,
+    private progressServ: ProgressService    
     ){  }
 
   ngOnInit(){
@@ -27,7 +27,7 @@ export class AppComponent implements OnInit{
         this.usuario = this.authService.getUser();
       }
 	  );
-    this.authService.progressEmitter.subscribe(res => {
+    this.progressServ.progressEmitter.subscribe(res => {
       this.progress = res;
       console.log(res+" teste "+this.progress);
     });

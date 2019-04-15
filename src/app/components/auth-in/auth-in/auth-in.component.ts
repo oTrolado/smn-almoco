@@ -2,7 +2,7 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
 import {AuthServiceService} from '../../../services/auth-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
-
+import { ProgressService } from '../../../services/progress.service';
 
 
 @Component({
@@ -16,6 +16,7 @@ export class AuthInComponent implements OnInit {
   	private serv: AuthServiceService,
   	private snack: MatSnackBar,
   	private router: Router,
+  	private progress: ProgressService
   	) { }
 
   private usuario: any = {};
@@ -87,17 +88,19 @@ export class AuthInComponent implements OnInit {
  
   login() {
   		if(this.validaLogin()){
+  			this.progress.onProgress();
   			let retorno: any;
   			retorno = this.serv.logar(this.usuario);
   			retorno.subscribe(res => {
   					this.usuario = res;
-  					this.serv.offProgress();
+  					this.progress.offProgress();
   					this.snack.open('Logado com sucesso ' + this.usuario.nome, 'Fechar', { duration: 3000 });
-  					this.serv.validar(true, this.usuario);	
+  					this.serv.validar(true, this.usuario);
+  					this.progress.offProgress();	
   					this.router.navigate(['cardapio']);
   				}, 
   				erro => { 
-  					this.serv.offProgress();
+  					this.progress.offProgress();
   					this.snack.open('Erro tente de novo mais tarde', 'Fechar', { duration: 3000 });
   					console.error(erro);
   					this.usuario.senha = "";
@@ -111,20 +114,20 @@ export class AuthInComponent implements OnInit {
 		
 		if (this.validaCadastro()){
 
-			
-			let retorno: any =this.serv.cadastrar(this.usuario);
+			this.progress.onProgress();
+			let retorno: any = this.serv.cadastrar(this.usuario);
 			retorno.subscribe(res => {
-					this.serv.offProgress();
+					this.progress.offProgress();
 					this.snack.open('Agora você esta cadastrado :)' + this.usuario.nome, 'Fechar', { duration: 3000 });
 					this.login();
 				},
 				erro => {
 					if(erro.status == 201){
-						this.serv.offProgress();
+						this.progress.offProgress();
 						this.snack.open('Agora você esta cadastrado :)' + this.usuario.nome, 'Fechar', { duration: 3000 });
 						this.login();
 					} else {
-						this.serv.offProgress();
+						this.progress.offProgress();
 						this.snack.open('Erro tente de novo mais tarde :(', 'Fechar', { duration: 3000 });						
 					}
 
