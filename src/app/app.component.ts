@@ -12,6 +12,7 @@ export class AppComponent implements OnInit{
   title = 'SMN';
   progress: boolean = false;
   mostrarMenu: boolean = false;
+  admin: boolean = false;
   usuario: any = {};
 
   constructor(
@@ -29,8 +30,9 @@ export class AppComponent implements OnInit{
 	  );
     this.progressServ.progressEmitter.subscribe(res => {
       this.progress = res;
-      console.log(res+" teste "+this.progress);
     });
+
+
   }
 
   logOut(){

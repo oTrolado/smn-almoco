@@ -19,10 +19,11 @@ export class ImadminGuard implements CanActivate{
   	route: ActivatedRouteSnapshot,
   	state: RouterStateSnapshot
   ): boolean {
-
+  	console.log(this.auth.getUser()+ " " +this.auth.isAutenticado());
   	if(this.auth.isAutenticado()){
   		let user:any = this.auth.getUser();
-  		if(user.admim == 'true'){
+  		console.log(user.admin);
+  		if(user.admin == true){
   			return true;
   		} else {
   			this.router.navigate(['cardapio']);

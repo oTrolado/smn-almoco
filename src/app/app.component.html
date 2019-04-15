@@ -20,6 +20,12 @@
 		  		<mat-divider></mat-divider>
 		  		<a routerLink="/feedback" (click)="drawer.toggle();"><mat-list-item>Sugestões</mat-list-item></a>
 		  		<mat-divider></mat-divider>
+		  		<nav id="admin">
+		  			<a *ngIf="usuario.admin" routerLink="/cardapios" (click)="drawer.toggle();"><mat-list-item>Editar Cardapios</mat-list-item></a>
+		  			<mat-divider></mat-divider>
+		  			<a *ngIf="usuario.admin" routerLink="/cardapios" (click)="drawer.toggle();"><mat-list-item>Pedidos de Troca</mat-list-item></a>
+	  			</nav>
+		  		<mat-divider></mat-divider>
 		  		<a routerLink="/cardapio" (click)="drawer.toggle(); logOut()"><mat-list-item>Sair</mat-list-item></a>
 		  		<mat-divider></mat-divider>
 			</nav>
