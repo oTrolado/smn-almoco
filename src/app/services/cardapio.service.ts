@@ -9,13 +9,12 @@ export class CardapioService {
   constructor(private http: HttpClient) { }
 
   listar(){
-  	console.log("Lintando os cardapios");
 	return this.http.get('http://cardapio-smn.herokuapp.com/cardapio/');
 
   }
 
   alterar(cardapio: any){
-  		console.log("Editando cardapio");
-		return this.http.put('http://cardapio-smn.herokuapp.com/carcapio/' + cardapio.id, cardapio);  	
+  		console.log(cardapio);
+		return this.http.put('http://cardapio-smn.herokuapp.com/cardapio/', cardapio);  	
   }
 }

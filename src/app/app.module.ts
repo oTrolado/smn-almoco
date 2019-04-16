@@ -21,6 +21,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import { AuthInComponent } from './components/auth-in/auth-in/auth-in.component';
 import { AuthServiceService } from './services/auth-service.service';
@@ -28,8 +29,6 @@ import { CardapioComponent } from './components/cardapio/cardapio.component';
 import { AuthGuard } from './guards/auth.guard';
 import { CardapioService} from './services/cardapio.service';
 import { FeedbackComponent } from './components/feedback/feedback.component';
-import { CardapiosComponent } from './components/gerenciar/cardapios/cardapios.component';
-import { PedidosComponent } from './components/gerenciar/pedidos/pedidos.component';
 import { ImadminGuard } from './guards/imadmin.guard';
 import { AlterarCardapioComponent } from './components/adm/alterar-cardapio/alterar-cardapio.component';
 
@@ -39,8 +38,6 @@ import { AlterarCardapioComponent } from './components/adm/alterar-cardapio/alte
     AuthInComponent,
     CardapioComponent,
     FeedbackComponent,
-    CardapiosComponent,
-    PedidosComponent,
     AlterarCardapioComponent
   ],
   imports: [
@@ -63,7 +60,8 @@ import { AlterarCardapioComponent } from './components/adm/alterar-cardapio/alte
     MatSelectModule,
     MatProgressSpinnerModule,
     MatSidenavModule,
-    MatTableModule
+    MatTableModule,
+    MatDatepickerModule
   ],
   providers: [
     AuthServiceService,

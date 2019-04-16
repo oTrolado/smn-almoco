@@ -1,3 +1,60 @@
-<p>
-  alterar-cardapio works!
-</p>
+<article class="container" id="cardapios">
+
+	<h1 class="mat-display-3"> Cardápios </h1>
+
+	<mat-tab-group color="accent">
+
+		<mat-tab *ngFor="let cardapio of cardapios" [label]="cardapio.nome_dia_da_semana">
+
+			<mat-card>
+				<form class="formCardapios">
+					<mat-form-field appearance="outline" color="accent" >
+	                	<mat-label>Prato Principal</mat-label>
+	                	<input name="pratoPrincipal" matInput placeholder="cardapio.pratoPrincipal" required  [(ngModel)]="cardapio.pratoPrincipal">
+	              	</mat-form-field>
+
+	              	<mat-form-field appearance="outline" color="accent" >
+	                	<mat-label>Opção 1</mat-label>
+	                	<input name="opcao1" matInput placeholder="cardapio.opcao1" required  [(ngModel)]="cardapio.opcao1">
+	              	</mat-form-field>
+
+	              	<mat-form-field appearance="outline" color="accent" >
+	                	<mat-label>Opção 2</mat-label>
+	                	<input name="opcao2" matInput placeholder="cardapio.opcao2" required  [(ngModel)]="cardapio.opcao2">
+	              	</mat-form-field>
+
+	              	<mat-form-field appearance="outline" color="accent" >
+	                	<mat-label>Guarnição 1</mat-label>
+	                	<input name="guarnicao1" matInput placeholder="cardapio.guarnicao1" required  [(ngModel)]="cardapio.guarnicao1">
+	              	</mat-form-field>
+
+	              	<mat-form-field appearance="outline" color="accent" >
+	                	<mat-label>Guarnição 2</mat-label>
+	                	<input name="guarnicao2" matInput placeholder="cardapio.guarnicao2" required  [(ngModel)]="cardapio.guarnicao2">
+	              	</mat-form-field>
+
+	              	<mat-form-field appearance="outline" color="accent" >
+	                	<mat-label>Salada</mat-label>
+	                	<input name="salada" matInput placeholder="cardapio.salada" required  [(ngModel)]="cardapio.salada">
+	              	</mat-form-field>
+
+	              	<mat-form-field appearance="outline" color="accent" >
+	                	<mat-label>Sobremesa</mat-label>
+	                	<input name="sobremesa" matInput placeholder="cardapio.sobremesa" required  [(ngModel)]="cardapio.sobremesa">
+	              	</mat-form-field>
+
+	              	<mat-form-field color="accent">
+					  <input matInput [matDatepicker]="picker" placeholder="Selecione a data">
+					  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+					  <mat-datepicker #picker></mat-datepicker>
+					</mat-form-field>
+
+	              	<button mat-flat-button color="accent" (click)="confirma(cardapio)"><strong>Confirmar</strong></button>
+				</form>
+			</mat-card>
+			
+		</mat-tab>
+		
+	</mat-tab-group>
+
+</article>

@@ -34,7 +34,7 @@ export class CardapioComponent implements OnInit {
   	retorno = this.cardServ.listar();
   	retorno.subscribe( res => {
   			this.cardapios = res;
-
+        console.log(this.cardapios[0].data);
   			this.cardapios = this.cardapios.map(cardapio => ({
   				...cardapio,
   				nome_dia_da_semana: this.dias[new Date(cardapio.data).getDay()],
@@ -51,7 +51,7 @@ export class CardapioComponent implements OnInit {
 		  				}
 		  				return 0;
   			});
-
+        console.log(this.cardapios[0].data);
         this.progress.offProgress();
   		},
   		erro => {
@@ -94,6 +94,7 @@ export class CardapioComponent implements OnInit {
             retorno = this.trocaServ.trocar(troca, res);
 
           } else { 
+            this.snack.open('Nada a atualizar por aqui...', 'Fechar', { duration: 3000 });
             this.progress.offProgress();
             return 
           }

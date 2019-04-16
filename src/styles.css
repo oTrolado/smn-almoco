@@ -48,7 +48,7 @@ a{ text-decoration: none; }
 .mat-form-field{ width: 100%; }
 .mat-drawer-content{ height: 95vh; }
 .mat-drawer-inner-container{ font-size: 18px; }
-.mat-display-3{text-align: center; margin-top: 20px;}
+.mat-display-3{text-align: center; margin: 20px!important;}
 .container{display: flex; flex-direction: column; height: 86vh;}
 
 
