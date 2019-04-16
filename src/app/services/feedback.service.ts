@@ -12,15 +12,15 @@ export class FeedbackService {
   	private http: HttpClient
   	) { }
 
-  salvar(sugestao){
-  	return this.http.post('cardapio-smn.herokuapp.com/sugestao', sugestao);
+  salvar(sugestao: any){
+  	return this.http.post('http://cardapio-smn.herokuapp.com/feedback', sugestao);
   }
 
   listar(){
-  	return this.http.get('cardapio-smn.herokuapp.com/sugestao');
+  	return this.http.get('http://cardapio-smn.herokuapp.com/feedback');
   }
 
   deletar(id: String){
-  	return this.http.delete('cardapio-smn.herokuapp.com/sugestao' + id);
+  	return this.http.delete('http://cardapio-smn.herokuapp.com/feedback' + id);
   }
 }

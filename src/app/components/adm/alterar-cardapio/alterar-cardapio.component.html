@@ -43,13 +43,14 @@
 	                	<input name="sobremesa" matInput placeholder="cardapio.sobremesa" required  [(ngModel)]="cardapio.sobremesa">
 	              	</mat-form-field>
 
-	              	<mat-form-field color="accent">
-					  <input matInput [matDatepicker]="picker" placeholder="Selecione a data">
+	              	<mat-form-field color="accent"  appearance="outline" color="accent">
+					  <mat-label>Data</mat-label>
+					  <input name="data" matInput [matDatepicker]="picker" placeholder="Selecione a data" required [(ngModel)]="cardapio.data">
 					  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
 					  <mat-datepicker #picker></mat-datepicker>
 					</mat-form-field>
 
-	              	<button mat-flat-button color="accent" (click)="confirma(cardapio)"><strong>Confirmar</strong></button>
+	              	<button mat-flat-button color="accent" (click)="confirma(cardapio);"><strong>Confirmar</strong></button>
 				</form>
 			</mat-card>
 			
