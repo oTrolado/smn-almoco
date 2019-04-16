@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { CardapioService } from './../../../services/cardapio.service';
 import { ProgressService } from './../../../services/progress.service';
+import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 
 @Component({
   selector: 'app-alterar-cardapio',
   templateUrl: './alterar-cardapio.component.html',
-  styleUrls: ['./alterar-cardapio.component.css']
+  styleUrls: ['./alterar-cardapio.component.css'],
+  providers: [{provide: MAT_DATE_LOCALE, useValue: 'pt-br'}]
 })
 export class AlterarCardapioComponent implements OnInit {
   private cardapios:any = {};
@@ -16,10 +18,12 @@ export class AlterarCardapioComponent implements OnInit {
   constructor(
   	private cardapioS: CardapioService,
   	private progress: ProgressService,
-  	private snack: MatSnackBar
-  ) { }
+	  private snack: MatSnackBar,
+	  private adapter: DateAdapter<any>  
+	) { }
 
   ngOnInit() {
+	this.adapter.setLocale('pt-br');
   	this.progress.onProgress();
   	let retorno: any = this.cardapioS.listar();
   	retorno.subscribe(res => {
@@ -29,7 +33,7 @@ export class AlterarCardapioComponent implements OnInit {
   			...cardapio,
   			nome_dia_da_semana: this.dias[new Date(cardapio.data).getDay()]
   		}));
-  	}, erro =>{
+  	}, erro =>{ 
   		console.log(erro);
   		this.progress.offProgress();
   	});

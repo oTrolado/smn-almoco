@@ -22,6 +22,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material';
 
 import { AuthInComponent } from './components/auth-in/auth-in/auth-in.component';
 import { AuthServiceService } from './services/auth-service.service';
@@ -61,6 +62,7 @@ import { AlterarCardapioComponent } from './components/adm/alterar-cardapio/alte
     MatProgressSpinnerModule,
     MatSidenavModule,
     MatTableModule,
+    MatNativeDateModule,
     MatDatepickerModule
   ],
   providers: [
