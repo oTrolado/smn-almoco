@@ -63,6 +63,7 @@ a{ text-decoration: none; }
 	
 	.mat-drawer{ width: 80%; }
 
+	.noMobile{display: none;}
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px){
@@ -76,6 +77,8 @@ a{ text-decoration: none; }
 	.mat-flat-button{ width: 100%; }
 
 	.mat-drawer{ width: 50%; }
+
+	.noMobile{display: none;}
 
 	/*cardapio------------------------------*/
 
@@ -105,9 +108,13 @@ a{ text-decoration: none; }
 	/*feedback--------------------------*/
 	#feedback{	margin-bottom: 20px; }
 	#feedback textarea{ height: 50vh; }
+
+	/*Trocas---------------------------*/
+	#trocas{ margin: 40px auto 60vh auto!important; }
 }
 
 @media screen and (min-width: 1200px) {
+
 /*tela de login ------------------------*/
 
 	.container{	width: 60%; display: flex; margin: 0 auto; }
@@ -128,4 +135,8 @@ a{ text-decoration: none; }
 /*feedback--------------------------*/
 	#feedback{	margin-bottom: 20px; }
 	#feedback textarea{ height: 50vh; }
+
+/*Trocas---------------------------*/
+	#trocas{ margin: 40px auto 60vh auto!important; }
+
 }
