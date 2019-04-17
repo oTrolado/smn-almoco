@@ -41,7 +41,7 @@ a{ text-decoration: none; }
 .mat-toolar{ height: 8vh; }
 .mat-tab-label{	width: 50%; }
 .mat-tab-label-content{color: white;font-size: 20px;}
-.mat-tab-group{	margin: 50px auto 0 auto; }
+.mat-tab-group{	margin: 50px auto 0 auto; width: 100%;}
 .mat-card{background-color: #424242 !important; }
 .mat-accent .mat-input-element{color: white;}
 .mat-button-wrapper{color: white; font-size: 15px;}
@@ -49,11 +49,13 @@ a{ text-decoration: none; }
 .mat-drawer-content{ height: 95vh; }
 .mat-drawer-inner-container{ font-size: 18px; }
 .mat-display-3{text-align: center; margin: 20px!important;}
-.container{display: flex; flex-direction: column; height: 86vh;}
+.container{display: flex; flex-direction: column;}
 
 
 @media screen and (max-width: 480px){
 	/*tela de login ------------------------*/
+
+	.container{ height: 86vh; }
 
 	.mat-tab-group{	width: 100%; margin: 25px auto 5px auto;}
 
@@ -65,7 +67,10 @@ a{ text-decoration: none; }
 
 @media screen and (min-width: 481px) and (max-width: 768px){
 	/*tela de login ------------------------*/
+	.container { height: 86vh; width: 90%; margin: auto}
 
+	.mat-tab-group{	width: 100%; margin: 25px auto 5px auto;}
+	
 	.mat-form-field{ margin: 20px 0; } 
 
 	.mat-flat-button{ width: 100%; }
@@ -82,40 +87,45 @@ a{ text-decoration: none; }
 @media screen and (min-width: 769px) and (max-width: 1199px){
 /*tela de login ------------------------*/
 
-	.container{
-		width: 60%;
-		display: flex;
-		margin: 0 auto;
-	}
-
-	.card-login{ width: 500px; padding: 10 40px!important;} 
-
+	.container{	width: 60%; display: flex; margin: 20px auto;}
+	#login{width: 500px;}
+	#login .mat-tab-group{ margin: 40px auto 50vh auto !important; }
+	.card-login{ padding: 10 40px!important;} 
 	.mat-flat-button{width: 100%;}	
-
 	.mat-drawer{ width: 30%; }
+	
 /*cardapio------------------------------*/
 	.tab-cardapio{ padding: 20px; }
-	.tab-cardapio th{ font-size: 25px; padding: 20px;}
+	.tab-cardapio th{ font-size: 25px; padding: 20px; }
 	.tab-cardapio td{ font-size: 25px; padding: 20px; }
+	#cardapio{margin: 30px auto 30vh auto!important; width: 70%!important;}
+	#cardapios{margin-bottom: 10vh!important}
+	#cardapios .mat-form-field{ width: 45%; margin: 5px 2.5%; }
 
+	/*feedback--------------------------*/
+	#feedback{	margin-bottom: 20px; }
+	#feedback textarea{ height: 50vh; }
 }
 
 @media screen and (min-width: 1200px) {
 /*tela de login ------------------------*/
 
-	.container{
-		width: 60%;
-		display: flex;
-		margin: auto;
-	}
-
-	.card-login{ width: 500px; padding: 10 40px!important;} 
-
+	.container{	width: 60%; display: flex; margin: 0 auto; }
+	#login{width: 500px; margin-top: 50px;}
+	#login .mat-tab-group{ margin: 40px auto 50vh auto !important; }
+	.card-login{  padding: 10 40px!important;} 
 	.mat-flat-button{width: 100%;}
-
 	.mat-drawer{ width: 20%; }
+
 /*cardapio------------------------------*/
 	.tab-cardapio{ padding: 20px; }
 	.tab-cardapio th{ font-size: 25px; padding: 20px; }
 	.tab-cardapio td{ font-size: 25px; padding: 20px; }
+	#cardapio{margin: 40px auto 30vh auto !important; width: 70%!important;}
+	#cardapios{margin-bottom: 10vh!important}
+	#cardapios .mat-form-field{ width: 45%; margin: 5px 2.5%; }
+
+/*feedback--------------------------*/
+	#feedback{	margin-bottom: 20px; }
+	#feedback textarea{ height: 50vh; }
 }

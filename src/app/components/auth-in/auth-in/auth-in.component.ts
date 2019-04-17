@@ -67,7 +67,7 @@ export class AuthInComponent implements OnInit {
 	  						this.snack.open('Confirme a senha por favor ;)', 'Fechar', { duration: 3000 });
 	  						return false;
 	  					}
-	  					this.snack.open('Você não fica seguro sem senha :(', 'Fechar', { duration: 3000 });
+	  					this.snack.open('Você não ficará seguro sem senha :(', 'Fechar', { duration: 3000 });
 	  					return false;
 	  				}
 	  				this.snack.open('Coloque um email valido ;)', 'Fechar', { duration: 3000 });
