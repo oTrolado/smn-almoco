@@ -26,6 +26,10 @@ export class TrocaService {
   	console.log('listar');
   }
 
+  listarTodos(){
+    return this.http.get('http://cardapio-smn.herokuapp.com/troca/');
+  }
+
   trocar(troca: any, trocas:any){
 
   	let check:boolean = false;

@@ -23,6 +23,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { AuthInComponent } from './components/auth-in/auth-in/auth-in.component';
 import { AuthServiceService } from './services/auth-service.service';
@@ -32,6 +33,7 @@ import { CardapioService} from './services/cardapio.service';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { ImadminGuard } from './guards/imadmin.guard';
 import { AlterarCardapioComponent } from './components/adm/alterar-cardapio/alterar-cardapio.component';
+import { TrocasComponent } from './components/adm/trocas/trocas.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { AlterarCardapioComponent } from './components/adm/alterar-cardapio/alte
     AuthInComponent,
     CardapioComponent,
     FeedbackComponent,
-    AlterarCardapioComponent
+    AlterarCardapioComponent,
+    TrocasComponent
   ],
   imports: [
     FormsModule,
@@ -63,7 +66,8 @@ import { AlterarCardapioComponent } from './components/adm/alterar-cardapio/alte
     MatSidenavModule,
     MatTableModule,
     MatNativeDateModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatExpansionModule
   ],
   providers: [
     AuthServiceService,

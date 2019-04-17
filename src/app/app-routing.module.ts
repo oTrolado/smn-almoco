@@ -8,12 +8,14 @@ import { AuthInComponent } from './components/auth-in/auth-in/auth-in.component'
 import { CardapioComponent } from './components/cardapio/cardapio.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { AlterarCardapioComponent } from './components/adm/alterar-cardapio/alterar-cardapio.component';
+import { TrocasComponent } from './components/adm/trocas/trocas.component';
 
 const routes: Routes = [
 	{ path: '', component: AuthInComponent },
 	{ path: 'cardapio', component: CardapioComponent, canActivate: [AuthGuard] },
 	{ path: 'feedback', component: FeedbackComponent, canActivate: [AuthGuard] },
-	{ path: 'cardapios', component: AlterarCardapioComponent, canActivate: [ImadminGuard]}
+	{ path: 'cardapios', component: AlterarCardapioComponent, canActivate: [ImadminGuard]},
+	{ path: 'trocas', component: TrocasComponent, canActivate: [ImadminGuard]}
 ];
 
 @NgModule({

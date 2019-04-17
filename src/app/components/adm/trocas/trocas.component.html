@@ -1,0 +1,43 @@
+<article class="container" id="trocas">
+	<mat-tab-group color="accent">
+
+		<mat-tab *ngFor="let cardapio of cardapios" [label]="cardapio.nome_dia_da_semana">
+
+			<mat-card class="dia-semana">
+				<mat-accordion>
+				  <mat-expansion-panel>
+				    <mat-expansion-panel-header>
+				      <mat-panel-title>
+				        {{ cardapio.opcao1 }}
+				      </mat-panel-title>
+				    </mat-expansion-panel-header>
+				    <mat-list role="list">
+				      <div *ngFor="let troca of trocas" >
+				      	<mat-list-item role="listitem" *ngIf="filtrar(cardapio, troca, cardapio.opcao1)">
+					  		{{ troca.user.nome }}
+					    </mat-list-item>
+				      </div>
+					</mat-list>
+				  </mat-expansion-panel>
+				  <mat-expansion-panel (opened)="panelOpenState = true"
+				                       (closed)="panelOpenState = false">
+				    <mat-expansion-panel-header>
+				      <mat-panel-title>
+				        {{ cardapio.opcao2 }}
+				      </mat-panel-title>
+				    </mat-expansion-panel-header>
+				    	<mat-list role="list">
+					      <div *ngFor="let troca of trocas" >
+					      	<mat-list-item role="listitem" *ngIf="filtrar(cardapio, troca, cardapio.opcao2)">
+						  		{{ troca.user.nome }}
+						    </mat-list-item>
+					      </div>
+						</mat-list>
+				  </mat-expansion-panel>
+				</mat-accordion>
+			</mat-card>
+			
+		</mat-tab>
+		
+	</mat-tab-group>
+</article>
