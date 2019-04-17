@@ -8,7 +8,7 @@
 				  <mat-expansion-panel>
 				    <mat-expansion-panel-header>
 				      <mat-panel-title>
-				        {{ cardapio.opcao1 }}
+				        <strong>{{ cardapio.opcao1 }}</strong>
 				      </mat-panel-title>
 				    </mat-expansion-panel-header>
 				    <mat-list role="list">
@@ -23,12 +23,27 @@
 				                       (closed)="panelOpenState = false">
 				    <mat-expansion-panel-header>
 				      <mat-panel-title>
-				        {{ cardapio.opcao2 }}
+				        <strong>{{ cardapio.opcao2 }}</strong>
 				      </mat-panel-title>
 				    </mat-expansion-panel-header>
 				    	<mat-list role="list">
 					      <div *ngFor="let troca of trocas" >
 					      	<mat-list-item role="listitem" *ngIf="filtrar(cardapio, troca, cardapio.opcao2)">
+						  		{{ troca.user.nome }}
+						    </mat-list-item>
+					      </div>
+						</mat-list>
+				  </mat-expansion-panel>
+				  <mat-expansion-panel (opened)="panelOpenState = true"
+				                       (closed)="panelOpenState = false">
+				    <mat-expansion-panel-header>
+				      <mat-panel-title>
+				        <strong>Desistiu</strong>
+				      </mat-panel-title>
+				    </mat-expansion-panel-header>
+				    	<mat-list role="list">
+					      <div *ngFor="let troca of trocas" >
+					      	<mat-list-item role="listitem" *ngIf="filtrar(cardapio, troca, 'desistiu')">
 						  		{{ troca.user.nome }}
 						    </mat-list-item>
 					      </div>
