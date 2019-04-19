@@ -18,7 +18,7 @@ body {
 	color: #00c853;
 }
 
-a{ text-decoration: none; }
+a{ text-decoration: none; cursor: pointer; }
 
 #header{background-color: black!important; height: 7vh;}
 #menu{ position:  fixed; float: left; z-index: 2;}
@@ -135,8 +135,9 @@ a{ text-decoration: none; }
 /*feedback--------------------------*/
 	#feedback{	margin-bottom: 20px; }
 	#feedback textarea{ height: 50vh; }
-
+	#feedbacks{ margin: 40px auto 70vh auto!important; }
 /*Trocas---------------------------*/
 	#trocas{ margin: 40px auto 60vh auto!important; }
+
 
 }

@@ -1,0 +1,38 @@
+<article class="container" id="feedbacks">
+	<h1 class="mat-display-3"> <span class="noMobile">Painel de </span>Sugestões </h1>
+	
+	<mat-card>
+		<mat-accordion>
+		  <mat-expansion-panel>
+		    <mat-expansion-panel-header>
+		      <mat-panel-title>
+		        <strong>Sugestões</strong>
+		      </mat-panel-title>
+		    </mat-expansion-panel-header>
+		       
+		      <article *ngFor="let feedback of feedbacks" >
+		      	<mat-card class="card-feedback" *ngIf="filtrar(feedback, 'sugestao')">
+			  		<p>{{ feedback.mensagem }}</p>
+			    </mat-card>
+		      </article>
+			  
+		  </mat-expansion-panel>	
+		  <mat-expansion-panel (opened)="panelOpenState = true"
+		                       (closed)="panelOpenState = false">
+		    <mat-expansion-panel-header>
+		      <mat-panel-title>
+		        <strong>Bugs</strong>
+		      </mat-panel-title>
+		    </mat-expansion-panel-header>
+		    
+		      <article *ngFor="let feedback of feedbacks" >
+		      	<mat-card class="card-feedback" *ngIf="filtrar(feedback, 'bug')">
+			  		<p>{{ feedback.mensagem }}</p>
+			    </mat-card>
+		      </article>
+
+		  </mat-expansion-panel>
+		</mat-accordion>
+	</mat-card>
+	
+</article>

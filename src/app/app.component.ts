@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthServiceService } from './services/auth-service.service';
 import { HttpClient } from '@angular/common/http';
 import { AuthInComponent } from './components/auth-in/auth-in/auth-in.component';
@@ -18,7 +19,8 @@ export class AppComponent implements OnInit{
   constructor(
     private authService: AuthServiceService, 
     private authIn: AuthInComponent,
-    private progressServ: ProgressService    
+    private progressServ: ProgressService,
+    private router: Router    
     ){  }
 
   ngOnInit(){
@@ -37,6 +39,12 @@ export class AppComponent implements OnInit{
 
   logOut(){
     this.authIn.logOut();
+  }
+
+  feedback(){
+    if(this.usuario.admin){
+      this.router.navigate(['feedbacks']);
+    } else this.router.navigate(['feedback']);
   }
 
 }

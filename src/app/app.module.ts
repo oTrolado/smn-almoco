@@ -34,6 +34,7 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
 import { ImadminGuard } from './guards/imadmin.guard';
 import { AlterarCardapioComponent } from './components/adm/alterar-cardapio/alterar-cardapio.component';
 import { TrocasComponent } from './components/adm/trocas/trocas.component';
+import { FeedbacksComponent } from './components/adm/feedbacks/feedbacks.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { TrocasComponent } from './components/adm/trocas/trocas.component';
     CardapioComponent,
     FeedbackComponent,
     AlterarCardapioComponent,
-    TrocasComponent
+    TrocasComponent,
+    FeedbacksComponent
   ],
   imports: [
     FormsModule,
