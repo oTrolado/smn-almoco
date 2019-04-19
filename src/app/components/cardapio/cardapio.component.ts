@@ -60,7 +60,7 @@ export class CardapioComponent implements OnInit {
 		 });
   }
 
-  confirma(){
+  confirma(cardapio){
     this.progress.onProgress();
 
     let user:any = {
@@ -72,48 +72,52 @@ export class CardapioComponent implements OnInit {
     
     retornoTrocas.subscribe(res => {
       console.log('res '+ res);
- 
-      this.cardapios.map((cardapio) =>{
-          if(cardapio.check == true){
-            let troca: any = {
-              user: this.usuario._id,
-              cardapio: cardapio._id,
-              pratoPrincipal: "desistiu"
-            };
 
-            retorno = this.trocaServ.trocar(troca, res);
+      if(cardapio.check == true){
+
+        let troca: any = {
+          user: this.usuario._id,
+          cardapio: cardapio._id,
+          pratoPrincipal: "desistiu"
+        };
+
+        retorno = this.trocaServ.trocar(troca, res);
 
 
-          } else if( cardapio.escolha != cardapio.pratoPrincipal){
-            
-            let troca: any = {
-              user: this.usuario._id,
-              cardapio: cardapio._id,
-              pratoPrincipal: cardapio.escolha
-            }; 
-            retorno = this.trocaServ.trocar(troca, res);
+      } else if( cardapio.escolha != cardapio.pratoPrincipal){
+        
+        let troca: any = {
+          user: this.usuario._id,
+          cardapio: cardapio._id,
+          pratoPrincipal: cardapio.escolha
+        }; 
 
-          } else { 
-            this.snack.open('Nada a atualizar por aqui...', 'Fechar', { duration: 3000 });
-            this.progress.offProgress();
-            return 
-          }
+        retorno = this.trocaServ.trocar(troca, res);
 
-          retorno.subscribe(res => {
-            console.log(cardapio.nome_dia_da_semana + ' atualisado');
-            this.snack.open('Sucesso ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
-            this.progress.offProgress();
-          },
-          erro => {
-            console.log(erro);
-            if(erro.status == 201){
-              this.snack.open('Sucesso ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
-              this.progress.offProgress();   
-            } else {
-              this.snack.open('Erro ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
-              this.progress.offProgress();
-            }    
-          });
+      } else { 
+        let troca: any = {
+          user: this.usuario._id,
+          cardapio: cardapio._id,
+          pratoPrincipal: cardapio.pratoPrincipal
+        }; 
+
+        retorno = this.trocaServ.trocar(troca, res);          
+      }
+
+      retorno.subscribe(res => {
+        console.log(cardapio.nome_dia_da_semana + ' atualisado');
+        this.snack.open('Sucesso ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
+        this.progress.offProgress();
+      },
+      erro => {
+        console.log(erro);
+        if(erro.status == 201){
+          this.snack.open('Sucesso ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
+          this.progress.offProgress();   
+        } else {
+          this.snack.open('Erro ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
+          this.progress.offProgress();
+        }    
       });
     }, erro => {
         console.log('erro no get trocas ' + erro);

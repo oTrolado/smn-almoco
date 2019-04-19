@@ -29,11 +29,15 @@
 					<tr><th>Sobremesa</th><td>{{ cardapio.sobremesa }}</td></tr>
 					<tr><th>Data</th><td>{{ cardapio.data }}</td></tr>
 				</table>
-				<mat-checkbox [(ngModel)]="cardapio.check">Não vou almoçar aqui!</mat-checkbox>
+				<section class="btn-wrap">
+					<mat-checkbox [(ngModel)]="cardapio.check">Não vou almoçar aqui!</mat-checkbox>
+					<button mat-flat-button color="accent" (click)="confirma(cardapio)"><strong>Confirmar</strong></button>	
+				</section>
+				
 			</mat-card>
 			
 		</mat-tab>
 		
 	</mat-tab-group>
-	<button mat-flat-button color="accent" (click)="confirma()"><strong>Confirmar</strong></button>
+	
 </div>
