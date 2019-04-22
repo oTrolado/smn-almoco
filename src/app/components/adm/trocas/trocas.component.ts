@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CardapioService } from './../../../services/cardapio.service';
 import { TrocaService } from './../../../services/troca.service';
+import { ProgressService } from './../../../services/progress.service';
 
 @Component({
   selector: 'app-trocas',
@@ -11,7 +12,8 @@ export class TrocasComponent implements OnInit {
 
   constructor(
   	private cardapioS: CardapioService,
-  	private trocaS: TrocaService
+  	private trocaS: TrocaService,
+  	private progress: ProgressService
   ) { }
 
   private cardapios: any = {};
@@ -20,6 +22,7 @@ export class TrocasComponent implements OnInit {
 
 
   ngOnInit() {
+  	this.progress.onProgress();
   	let retornoCardapios: any = this.cardapioS.listar();
   	retornoCardapios.subscribe(res => {
   		this.cardapios = res;
@@ -36,17 +39,15 @@ export class TrocasComponent implements OnInit {
   	retornoTrocas.subscribe(res => {
   		this.trocas = res;
   		console.log(this.trocas);
+  		this.progress.offProgress();
   	}, erro => {
   		console.log(erro);
+  		this.progress.offProgress();
   	});
   }
 
-  filtrar(cardapio, troca, opcao){
-  	if(troca.cardapio._id == cardapio._id){
-		if(troca.pratoPrincipal == opcao){
-			return true;
-		}		
-  	} return false;
+  trocaFiltro(id){
+  	return this.trocas.filter( troca => troca.cardapio._id === id);
   }
 
 }

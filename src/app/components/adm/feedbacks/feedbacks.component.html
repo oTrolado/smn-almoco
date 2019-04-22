@@ -2,7 +2,7 @@
 	<h1 class="mat-display-3"> <span class="noMobile">Painel de </span>Sugestões </h1>
 	
 	<mat-card>
-		<mat-accordion>
+		<mat-accordion [multi]="true">
 		  <mat-expansion-panel>
 		    <mat-expansion-panel-header>
 		      <mat-panel-title>
@@ -17,8 +17,7 @@
 		      </article>
 			  
 		  </mat-expansion-panel>	
-		  <mat-expansion-panel (opened)="panelOpenState = true"
-		                       (closed)="panelOpenState = false">
+		  <mat-expansion-panel >
 		    <mat-expansion-panel-header>
 		      <mat-panel-title>
 		        <strong>Bugs</strong>

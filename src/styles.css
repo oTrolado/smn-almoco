@@ -108,6 +108,7 @@ a{ text-decoration: none; cursor: pointer; }
 	/*feedback--------------------------*/
 	#feedback{	margin-bottom: 20px; }
 	#feedback textarea{ height: 50vh; }
+	#feedbacks{ margin: 40px auto 70vh auto!important; }
 
 	/*Trocas---------------------------*/
 	#trocas{ margin: 40px auto 60vh auto!important; }

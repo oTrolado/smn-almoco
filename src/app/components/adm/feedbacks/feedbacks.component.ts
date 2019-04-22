@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FeedbackService } from './../../../services/feedback.service';
+import { ProgressService } from './../../../services/progress.service';
+
 
 @Component({
   selector: 'app-feedbacks',
@@ -8,17 +10,23 @@ import { FeedbackService } from './../../../services/feedback.service';
 })
 export class FeedbacksComponent implements OnInit {
 
-  constructor(private feedbackS: FeedbackService) { }
+  constructor(
+  	private feedbackS: FeedbackService,
+  	private progress: ProgressService
+  	) { }
 
   private feedbacks: any = {};
 
   ngOnInit() {
+  	this.progress.onProgress();
   	let retorno: any = this.feedbackS.listar();
   	retorno.subscribe(res => {
   		this.feedbacks = res;
   		console.log(this.feedbacks);
+  		this.progress.offProgress();
   	}, erro => {
   		console.log(erro);
+  		this.progress.offProgress();
   	});
   }
 

@@ -5,7 +5,7 @@
 		<mat-tab *ngFor="let cardapio of cardapios" [label]="cardapio.nome_dia_da_semana">
 
 			<mat-card class="dia-semana">
-				<mat-accordion>
+				<mat-accordion [multi]="true">
 				  <mat-expansion-panel>
 				    <mat-expansion-panel-header>
 				      <mat-panel-title>
@@ -13,42 +13,40 @@
 				      </mat-panel-title>
 				    </mat-expansion-panel-header>
 				    <mat-list role="list">
-				      <div *ngFor="let troca of trocas" >
-				      	<mat-list-item role="listitem" *ngIf="filtrar(cardapio, troca, cardapio.opcao1)">
+				      <ng-container *ngFor="let troca of trocaFiltro(cardapio._id)" >
+				      	<mat-list-item role="listitem" *ngIf=" troca.pratoPrincipal == cardapio.opcao1 ">
 					  		{{ troca.user.nome }}
 					    </mat-list-item>
-				      </div>
+				      </ng-container>
 					</mat-list>
 				  </mat-expansion-panel>
-				  <mat-expansion-panel (opened)="panelOpenState = true"
-				                       (closed)="panelOpenState = false">
+				  <mat-expansion-panel >
 				    <mat-expansion-panel-header>
 				      <mat-panel-title>
 				        <strong>{{ cardapio.opcao2 }}</strong>
 				      </mat-panel-title>
 				    </mat-expansion-panel-header>
-				    	<mat-list role="list">
-					      <div *ngFor="let troca of trocas" >
-					      	<mat-list-item role="listitem" *ngIf="filtrar(cardapio, troca, cardapio.opcao2)">
+				       <mat-list role="list">	
+			    		  <ng-container *ngFor="let troca of trocaFiltro(cardapio._id)" >
+					      	<mat-list-item role="listitem" *ngIf=" troca.pratoPrincipal == cardapio.opcao2 ">
 						  		{{ troca.user.nome }}
 						    </mat-list-item>
-					      </div>
-						</mat-list>
+					      </ng-container>
+				       </mat-list>
 				  </mat-expansion-panel>
-				  <mat-expansion-panel (opened)="panelOpenState = true"
-				                       (closed)="panelOpenState = false">
+				  <mat-expansion-panel >
 				    <mat-expansion-panel-header>
 				      <mat-panel-title>
 				        <strong>Desistiu</strong>
 				      </mat-panel-title>
 				    </mat-expansion-panel-header>
-				    	<mat-list role="list">
-					      <div *ngFor="let troca of trocas" >
-					      	<mat-list-item role="listitem" *ngIf="filtrar(cardapio, troca, 'desistiu')">
+				    	<mat-list role="list">	
+			    		  <ng-container *ngFor="let troca of trocaFiltro(cardapio._id)" >
+					      	<mat-list-item role="listitem" *ngIf=" troca.pratoPrincipal == 'desistiu' ">
 						  		{{ troca.user.nome }}
 						    </mat-list-item>
-					      </div>
-						</mat-list>
+					      </ng-container>
+				       </mat-list>
 				  </mat-expansion-panel>
 				</mat-accordion>
 			</mat-card>
