@@ -24,6 +24,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatBadgeModule} from '@angular/material/badge';
 
 import { AuthInComponent } from './components/auth-in/auth-in/auth-in.component';
 import { AuthServiceService } from './services/auth-service.service';
@@ -35,6 +36,8 @@ import { ImadminGuard } from './guards/imadmin.guard';
 import { AlterarCardapioComponent } from './components/adm/alterar-cardapio/alterar-cardapio.component';
 import { TrocasComponent } from './components/adm/trocas/trocas.component';
 import { FeedbacksComponent } from './components/adm/feedbacks/feedbacks.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -69,7 +72,9 @@ import { FeedbacksComponent } from './components/adm/feedbacks/feedbacks.compone
     MatTableModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatBadgeModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     AuthServiceService,

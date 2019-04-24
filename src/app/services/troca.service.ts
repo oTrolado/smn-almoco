@@ -10,20 +10,17 @@ export class TrocaService {
   constructor(private http: HttpClient) { }
 
   criar(troca: any){
-  	console.log(troca);	
   	return this.http.post('http://cardapio-smn.herokuapp.com/troca/', troca);
  
   }
 
   atualizar(troca: any){
-  	console.log('atualizar');
   	return this.http.put('http://cardapio-smn.herokuapp.com/troca/', troca);
   }
 
 
   listar(user){
   	return this.http.post('http://cardapio-smn.herokuapp.com/troca/user', user);	
-  	console.log('listar');
   }
 
   listarTodos(){
@@ -33,7 +30,6 @@ export class TrocaService {
   trocar(troca: any, trocas:any){
 
   	let check:boolean = false;
-  		console.log('trocar ' + trocas)
 
   		let pedidos = trocas;
   		console.log(pedidos);

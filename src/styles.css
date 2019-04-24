@@ -42,6 +42,7 @@ a{ text-decoration: none; cursor: pointer; }
 .mat-tab-label{	width: 50%; }
 .mat-tab-label-content{color: white;font-size: 20px;}
 .mat-tab-group{	margin: 50px auto 0 auto; width: 100%;}
+.mat-tab-body-content{ overflow: hidden!important; }
 .mat-card{background-color: #424242 !important; }
 .mat-accent .mat-input-element{color: white;}
 .mat-button-wrapper{color: white; font-size: 15px;}
@@ -49,6 +50,9 @@ a{ text-decoration: none; cursor: pointer; }
 .mat-drawer-content{ height: 95vh; }
 .mat-drawer-inner-container{ font-size: 18px; }
 .mat-display-3{text-align: center; margin: 20px!important;}
+.mat-expansion-panel-header{ position: relative; }
+
+.badge{ top: 3px; right: 40px; position: absolute!important; }
 .container{display: flex; flex-direction: column;}
 
 

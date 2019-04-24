@@ -1,11 +1,11 @@
-<div class="container" id="login">
+<section class="container" id="login">
    <mat-tab-group color="accent">
       <mat-tab label="Entrar">
           <mat-card class="card-login">
             <form id="formlogin">
               <mat-form-field appearance="outline" color="accent" >
                 <mat-label>Usuário</mat-label>
-                <input name="user" matInput placeholder="login123" required  [(ngModel)]="usuario.user">
+                <input name="user" matInput placeholder="login123" required  [(ngModel)]="usuario.user" autocomplete="off">
               </mat-form-field>
               <mat-form-field appearance="outline" color="accent"  >
                 <mat-label>Senha</mat-label>
@@ -20,15 +20,15 @@
           <form id="singin">
               <mat-form-field appearance="outline" color="accent" >
                 <mat-label>Usuário</mat-label>
-                <input name="user" matInput placeholder="1234" required [(ngModel)]="usuario.user">
+                <input name="user" matInput placeholder="1234" required [(ngModel)]="usuario.user" autocomplete="off">
               </mat-form-field>
               <mat-form-field appearance="outline" color="accent" >
                 <mat-label>Nome</mat-label>
-                <input name="nome" matInput placeholder="Mario" required [(ngModel)]="usuario.nome"  >
+                <input name="nome" matInput placeholder="Mario" required [(ngModel)]="usuario.nome"  autocomplete="off">
               </mat-form-field>
               <mat-form-field appearance="outline" color="accent" >
                 <mat-label>Email</mat-label>
-                <input name="email" matInput placeholder="mario@smn.com.br" required [(ngModel)]="usuario.email">
+                <input name="email" matInput placeholder="mario@smn.com.br" required [(ngModel)]="usuario.email" autocomplete="off">
               </mat-form-field>
               <mat-form-field appearance="outline" color="accent"  >
                 <mat-label>Senha</mat-label>
@@ -43,4 +43,4 @@
         </mat-card>
       </mat-tab>
     </mat-tab-group>
- </div>
+ </section>

@@ -14,7 +14,6 @@ export class CardapioService {
   }
 
   alterar(cardapio: any){
-  		console.log(cardapio);
 		return this.http.put('http://cardapio-smn.herokuapp.com/cardapio/', cardapio);  	
   }
 }

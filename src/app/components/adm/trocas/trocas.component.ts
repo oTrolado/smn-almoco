@@ -30,7 +30,6 @@ export class TrocasComponent implements OnInit {
   			...cardapio,
   			nome_dia_da_semana: this.dias[new Date(cardapio.data).getDay()]
   		}))
-  		console.log(this.cardapios);
   	}, erro => {
   		console.log(erro);
   	});
@@ -38,7 +37,6 @@ export class TrocasComponent implements OnInit {
   	let retornoTrocas: any = this.trocaS.listarTodos();
   	retornoTrocas.subscribe(res => {
   		this.trocas = res;
-  		console.log(this.trocas);
   		this.progress.offProgress();
   	}, erro => {
   		console.log(erro);
@@ -48,6 +46,11 @@ export class TrocasComponent implements OnInit {
 
   trocaFiltro(id){
   	return this.trocas.filter( troca => troca.cardapio._id === id);
+  }
+
+  contador(cardapio, opcao){
+  	let contador: number = this.trocas.filter(troca => troca.cardapio._id == cardapio._id && troca.pratoPrincipal == opcao).length;
+  	return contador;
   }
 
 }

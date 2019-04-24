@@ -1,4 +1,4 @@
-<article class="container" id="trocas">
+<section class="container" id="trocas">
 	<h1 class="mat-display-3"> <span class="noMobile">Painel de </span>Trocas </h1>
 	<mat-tab-group color="accent">
 
@@ -9,13 +9,17 @@
 				  <mat-expansion-panel>
 				    <mat-expansion-panel-header>
 				      <mat-panel-title>
-				        <strong>{{ cardapio.opcao1 }}</strong>
+
+				        <strong>
+				        	{{ cardapio.opcao1 }} <button class="badge" mat-mini-fab disabled>{{ contador(cardapio, cardapio.opcao1) }}</button>
+				        </strong>
+
 				      </mat-panel-title>
 				    </mat-expansion-panel-header>
 				    <mat-list role="list">
 				      <ng-container *ngFor="let troca of trocaFiltro(cardapio._id)" >
 				      	<mat-list-item role="listitem" *ngIf=" troca.pratoPrincipal == cardapio.opcao1 ">
-					  		{{ troca.user.nome }}
+					  		{{ troca.user.nome }} 
 					    </mat-list-item>
 				      </ng-container>
 					</mat-list>
@@ -23,7 +27,11 @@
 				  <mat-expansion-panel >
 				    <mat-expansion-panel-header>
 				      <mat-panel-title>
-				        <strong>{{ cardapio.opcao2 }}</strong>
+
+				        <strong>
+				        	{{ cardapio.opcao2 }} <button class="badge" mat-mini-fab disabled>{{ contador(cardapio, cardapio.opcao2) }}</button>
+				        </strong>
+
 				      </mat-panel-title>
 				    </mat-expansion-panel-header>
 				       <mat-list role="list">	
@@ -37,7 +45,11 @@
 				  <mat-expansion-panel >
 				    <mat-expansion-panel-header>
 				      <mat-panel-title>
-				        <strong>Desistiu</strong>
+
+				        <strong>
+				        	Desistiu <button class="badge" mat-mini-fab disabled>{{ contador(cardapio, 'desistiu') }}</button>
+				        </strong>
+
 				      </mat-panel-title>
 				    </mat-expansion-panel-header>
 				    	<mat-list role="list">	
@@ -54,4 +66,4 @@
 		</mat-tab>
 		
 	</mat-tab-group>
-</article>
+</section>
