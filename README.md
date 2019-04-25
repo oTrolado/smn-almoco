@@ -1,4 +1,4 @@
-# Smn
+# Deploy at gaia-smn.herokuapp.com
 
 Esse projeto foi gerado com angular CLI versão 7.3.6.
 Frontend do sistema desenvolvido pela turma de estagio da SMN periudo tarde.
