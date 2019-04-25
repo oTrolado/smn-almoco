@@ -15,7 +15,7 @@ export class FeedbacksComponent implements OnInit {
   	private progress: ProgressService
   	) { }
 
-  private feedbacks: any = {};
+  feedbacks: any = {};
 
   ngOnInit() {
   	this.progress.onProgress();
@@ -34,5 +34,10 @@ export class FeedbacksComponent implements OnInit {
   	if(feedback.tipo == tipo){
   		return true;
   	} return false;
+  }
+
+  contador(tipo){
+  	let contador:number = this.feedbacks.filter(feedback => feedback.tipo == tipo).length
+  	return contador;
   }
 }

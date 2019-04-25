@@ -11,8 +11,8 @@ import { AuthServiceService } from './../../services/auth-service.service';
 })
 export class FeedbackComponent implements OnInit {
 
-  private sugestao: any = {};
-  private usuario: any = {};
+  sugestao: any = {};
+  usuario: any = {};
 
   constructor(
     private feedServ: FeedbackService, 

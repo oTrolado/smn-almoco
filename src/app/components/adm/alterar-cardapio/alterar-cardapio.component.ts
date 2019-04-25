@@ -12,8 +12,8 @@ import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/
   providers: [{provide: MAT_DATE_LOCALE, useValue: 'pt-br'}]
 })
 export class AlterarCardapioComponent implements OnInit {
-  private cardapios:any = {};
-  private dias: any = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado"];
+  cardapios:any = {};
+  dias: any = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado"];
 
 
   constructor(

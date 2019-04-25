@@ -16,9 +16,9 @@ export class TrocasComponent implements OnInit {
   	private progress: ProgressService
   ) { }
 
-  private cardapios: any = {};
-  private trocas: any = {};
-  private dias: any = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado"];
+  cardapios: any = {};
+  trocas: any = {};
+  dias: any = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado"];
 
 
   ngOnInit() {

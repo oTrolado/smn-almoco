@@ -19,7 +19,7 @@ export class AuthInComponent implements OnInit {
   	private progress: ProgressService
   	) { }
 
-  private usuario: any = {};
+  usuario: any = {};
 
   ngOnInit() {
  

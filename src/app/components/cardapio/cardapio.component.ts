@@ -21,8 +21,8 @@ export class CardapioComponent implements OnInit {
   	) { }
 
   public cardapios: any = {};
-  private dias: any = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado"];
-  private usuario: any = this.authServ.getUser();
+  dias: any = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado"];
+  usuario: any = this.authServ.getUser();
 
   ngOnInit() {
     this.progress.onProgress();
