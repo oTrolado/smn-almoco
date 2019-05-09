@@ -10,6 +10,11 @@
           "/index.html",
           "/*.css",
           "/*.js"
+        ],
+        "urls": [
+          "https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500,500italic,700,700italic",
+          "https://fonts.googleapis.com/icon?family=Material+Icons"
+
         ]
       }
     }, {
@@ -21,6 +26,20 @@
           "/assets/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name":"api",
+      "urls":[
+        "http://cardapio-smn.herokuapp.com/*"
+      ],
+      "cacheConfig":{
+        "maxSize": 20,
+        "maxAge": "3d",
+        "timeout": "5s",
+        "stragy": "freshness"
       }
     }
   ]
