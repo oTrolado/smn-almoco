@@ -10,21 +10,21 @@ export class TrocaService {
   constructor(private http: HttpClient) { }
 
   criar(troca: any){
-  	return this.http.post('http://cardapio-smn.herokuapp.com/troca/', troca);
+  	return this.http.post('http://gaia-smn.herokuapp.com/troca/', troca);
  
   }
 
   atualizar(troca: any){
-  	return this.http.put('http://cardapio-smn.herokuapp.com/troca/', troca);
+  	return this.http.put('http://gaia-smn.herokuapp.com/troca/', troca);
   }
 
 
   listar(user){
-  	return this.http.post('http://cardapio-smn.herokuapp.com/troca/user', user);	
+  	return this.http.post('http://gaia-smn.herokuapp.com/troca/user', user);	
   }
 
   listarTodos(){
-    return this.http.get('http://cardapio-smn.herokuapp.com/troca/');
+    return this.http.get('http://gaia-smn.herokuapp.com/troca/');
   }
 
   trocar(troca: any, trocas:any){

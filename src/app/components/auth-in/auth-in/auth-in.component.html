@@ -1,46 +1,17 @@
 <section class="container" id="login">
-   <mat-tab-group color="accent">
-      <mat-tab label="Entrar">
-          <mat-card class="card-login">
-            <form id="formlogin">
-              <mat-form-field appearance="outline" color="accent" >
-                <mat-label>Usuário</mat-label>
-                <input name="user" matInput placeholder="login123" required  [(ngModel)]="usuario.user" autocomplete="off">
-              </mat-form-field>
-              <mat-form-field appearance="outline" color="accent"  >
-                <mat-label>Senha</mat-label>
-                <input name="senha" matInput type="password" required placeholder="*****" [(ngModel)]="usuario.senha">
-              </mat-form-field>
-              <button mat-flat-button color="accent" (click)="login()"><strong>Entrar</strong></button>
-            </form>
-          </mat-card>  
-      </mat-tab>
-      <mat-tab label="Cadastrar"> 
-        <mat-card class="card-login">
-          <form id="singin">
-              <mat-form-field appearance="outline" color="accent" >
-                <mat-label>Usuário</mat-label>
-                <input name="user" matInput placeholder="1234" required [(ngModel)]="usuario.user" autocomplete="off">
-              </mat-form-field>
-              <mat-form-field appearance="outline" color="accent" >
-                <mat-label>Nome</mat-label>
-                <input name="nome" matInput placeholder="Mario" required [(ngModel)]="usuario.nome"  autocomplete="off">
-              </mat-form-field>
-              <mat-form-field appearance="outline" color="accent" >
-                <mat-label>Email</mat-label>
-                <input name="email" matInput placeholder="mario@smn.com.br" required [(ngModel)]="usuario.email" autocomplete="off">
-              </mat-form-field>
-              <mat-form-field appearance="outline" color="accent"  >
-                <mat-label>Senha</mat-label>
-                <input name="senha" matInput type="password" required="" placeholder="*****" [(ngModel)]="usuario.senha">
-              </mat-form-field>
-              <mat-form-field appearance="outline" color="accent"  >
-                <mat-label>Confirme a senha</mat-label>
-                <input name="confirma" matInput type="password" required="" placeholder="*****" [(ngModel)]="usuario.confirma">
-              </mat-form-field>
-              <button mat-flat-button color="accent" (click)="singin()"><strong>Cadastrar</strong></button>
-            </form>
-        </mat-card>
-      </mat-tab>
-    </mat-tab-group>
+   
+    <mat-card class="card-login">
+      <form id="formlogin">
+        <mat-form-field appearance="outline" color="accent" >
+          <mat-label>Usuário</mat-label>
+          <input name="user" matInput placeholder="login123" required  [(ngModel)]="usuario.user" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="accent"  >
+          <mat-label>Senha</mat-label>
+          <input name="senha" matInput type="password" required placeholder="*****" [(ngModel)]="usuario.senha">
+        </mat-form-field>
+        <button mat-flat-button color="accent" (click)="login()"><strong>Entrar</strong></button>
+      </form>
+    </mat-card>  
+     
  </section>

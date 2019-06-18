@@ -10,7 +10,7 @@ import { ProgressService } from './services/progress.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'SMN';
+  title = 'GAIA';
   progress: boolean = false;
   mostrarMenu: boolean = false;
   admin: boolean = false;

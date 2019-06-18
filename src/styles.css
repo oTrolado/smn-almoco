@@ -54,6 +54,7 @@ a{ text-decoration: none; cursor: pointer; }
 .badge{ top: 3px; right: 40px; position: absolute!important; }
 .container{display: flex; flex-direction: column;}
 
+.card-login{ margin-bottom: 60vh;}
 
 @media screen and (max-width: 480px){
 	/*tela de login ------------------------*/

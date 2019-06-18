@@ -13,14 +13,14 @@ export class FeedbackService {
   	) { }
 
   salvar(sugestao: any){
-  	return this.http.post('http://cardapio-smn.herokuapp.com/feedback', sugestao);
+  	return this.http.post('http://gaia-smn.herokuapp.com/feedback', sugestao);
   }
 
   listar(){
-  	return this.http.get('http://cardapio-smn.herokuapp.com/feedback');
+  	return this.http.get('http://gaia-smn.herokuapp.com/feedback');
   }
 
   deletar(id: String){
-  	return this.http.delete('http://cardapio-smn.herokuapp.com/feedback' + id);
+  	return this.http.delete('http://gaia-smn.herokuapp.com/feedback' + id);
   }
 }

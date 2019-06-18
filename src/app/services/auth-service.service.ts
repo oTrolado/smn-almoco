@@ -16,12 +16,12 @@ export class AuthServiceService {
   private autenticado: boolean = false;
 
   	logar(usuario){
-  		return this.http.post('http://cardapio-smn.herokuapp.com/usuario/' + usuario.user, usuario);
+  		return this.http.post('http://gaia-smn.herokuapp.com/usuario/' + usuario.user, usuario);
   	}
   	
  
   	cadastrar(usuario){
-  		return this.http.post('http://cardapio-smn.herokuapp.com/usuario/', usuario);
+  		return this.http.post('http://gaia-smn.herokuapp.com/usuario/', usuario);
   	} 
 
   	validar(logado: boolean, usuario){
