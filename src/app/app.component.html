@@ -47,15 +47,14 @@
 	</mat-drawer>
 	<mat-drawer-content>
 		<router-outlet></router-outlet>
-
-		<footer>
-			<mat-toolbar id="footer" color="accent">
-				Time de Estágio
-			</mat-toolbar>
-		</footer>
-
 	</mat-drawer-content>
 </mat-drawer-container>
+
+<footer>
+	<mat-toolbar id="footer" color="accent">
+		Time de Estágio
+	</mat-toolbar>
+</footer>
 
 <div id="progresso" *ngIf="progress">
 	<mat-spinner color="accent"></mat-spinner>
