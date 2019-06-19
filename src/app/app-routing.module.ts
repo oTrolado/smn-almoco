@@ -10,6 +10,7 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
 import { AlterarCardapioComponent } from './components/adm/alterar-cardapio/alterar-cardapio.component';
 import { TrocasComponent } from './components/adm/trocas/trocas.component';
 import { FeedbacksComponent } from './components/adm/feedbacks/feedbacks.component';
+import { CadastroComponent } from './components/adm/cadastro/cadastro.component';
 
 const routes: Routes = [
 	{ path: '', component: AuthInComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
 	{ path: 'feedback', component: FeedbackComponent, canActivate: [AuthGuard] },
 	{ path: 'cardapios', component: AlterarCardapioComponent, canActivate: [ImadminGuard]},
 	{ path: 'trocas', component: TrocasComponent, canActivate: [ImadminGuard]},
-	{ path: 'feedbacks', component: FeedbacksComponent, canActivate: [ImadminGuard]}
+	{ path: 'feedbacks', component: FeedbacksComponent, canActivate: [ImadminGuard]},
+	{ path: 'usuario', component: CadastroComponent, canActivate: [ImadminGuard]}
 ];
 
 @NgModule({

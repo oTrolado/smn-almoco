@@ -6,7 +6,7 @@
 
 			<mat-card class="dia-semana">
 				<mat-accordion [multi]="true">
-				  <mat-expansion-panel>
+				  <mat-expansion-panel [disabled]="(trocas | filtroId:cardapio._id) | filtroTroca:cardapio.opcao1">
 				    <mat-expansion-panel-header>
 				      <mat-panel-title>
 
@@ -24,7 +24,7 @@
 				      </ng-container>
 					</mat-list>
 				  </mat-expansion-panel>
-				  <mat-expansion-panel >
+				  <mat-expansion-panel [disabled]="(trocas | filtroId:cardapio._id) | filtroTroca:cardapio.opcao2">
 				    <mat-expansion-panel-header>
 				      <mat-panel-title>
 
@@ -42,7 +42,7 @@
 					      </ng-container>
 				       </mat-list>
 				  </mat-expansion-panel>
-				  <mat-expansion-panel >
+				  <mat-expansion-panel [disabled]="(trocas | filtroId:cardapio._id) | filtroTroca:'desistiu'">
 				    <mat-expansion-panel-header>
 				      <mat-panel-title>
 

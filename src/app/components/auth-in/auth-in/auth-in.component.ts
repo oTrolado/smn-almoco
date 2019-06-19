@@ -32,13 +32,6 @@ export class AuthInComponent implements OnInit {
 		return false;
 	}
 
-	isEmail(value) {
-	  if (!/@/g.test(value)){
-	    return false;
-	  }
-	  return true;
-	};
-
   validaLogin() {
   	if(this.preenchido(this.usuario.user)){
   		if(this.preenchido(this.usuario.senha)){
@@ -52,39 +45,6 @@ export class AuthInComponent implements OnInit {
   	return false;
   }
 
-  validaCadastro(){
-  	if(this.preenchido(this.usuario.user)){
-	  	if(this.preenchido(this.usuario.nome)){
-	  		if(this.preenchido(this.usuario.senha)){
-	  			if(this.preenchido(this.usuario.user)){
-	  				if(this.isEmail(this.usuario.email)){
-	  					if(this.preenchido(this.usuario.senha)){
-	  						if(this.preenchido(this.usuario.confirma) && 
-	  						   this.usuario.confirma == this.usuario.senha){
-	  							this.snack.open('Cadastrando... :)', 'Fechar', { duration: 3000 });
-	  							return true;
-	  						} 
-	  						this.snack.open('Confirme a senha por favor ;)', 'Fechar', { duration: 3000 });
-	  						return false;
-	  					}
-	  					this.snack.open('Você não ficará seguro sem senha :(', 'Fechar', { duration: 3000 });
-	  					return false;
-	  				}
-	  				this.snack.open('Coloque um email valido ;)', 'Fechar', { duration: 3000 });
-	  				return false;
-	  			}
-	  			this.snack.open('Você não preencheu o email :(', 'Fechar', { duration: 3000 });
-	  			return false;
-	  		}
-	  		this.snack.open('Você não preencheu a senha :(', 'Fechar', { duration: 3000 });
-	  		return false;
-	  	}
-	  	this.snack.open('Hey qual seu nome???', 'Fechar', { duration: 3000 });
-	  	return false;
-  	}
-  	this.snack.open('Você não preencheu seu usuario :(', 'Fechar', { duration: 3000 });
-  	return false;	
-  }
  
   login() {
   		if(this.validaLogin()){
@@ -108,33 +68,6 @@ export class AuthInComponent implements OnInit {
   			);
 
   		}   		
-	}
- 
-	singin() {
-		
-		if (this.validaCadastro()){
-
-			this.progress.onProgress();
-			let retorno: any = this.serv.cadastrar(this.usuario);
-			retorno.subscribe(res => {
-					this.progress.offProgress();
-					this.snack.open('Agora você esta cadastrado :)' + this.usuario.nome, 'Fechar', { duration: 3000 });
-					this.login();
-				},
-				erro => {
-					if(erro.status == 201){
-						this.progress.offProgress();
-						this.snack.open('Agora você esta cadastrado :)' + this.usuario.nome, 'Fechar', { duration: 3000 });
-						this.login();
-					} else {
-						this.progress.offProgress();
-						this.snack.open('Erro tente de novo mais tarde :(', 'Fechar', { duration: 3000 });						
-					}
-
-				}
-			);
-	  			
-		}
 	}
 
 	public getUsuario(){

@@ -12,6 +12,8 @@ import { ProgressService } from './../../services/progress.service';
 })
 export class CardapioComponent implements OnInit {
 
+  tryies: number = 0;
+
   constructor(
   	private cardServ: CardapioService,
   	private authServ: AuthServiceService,
@@ -51,7 +53,6 @@ export class CardapioComponent implements OnInit {
 		  				}
 		  				return 0;
   			});
-        console.log(this.cardapios[0].data);
         this.progress.offProgress();
   		},
   		erro => {
@@ -68,10 +69,8 @@ export class CardapioComponent implements OnInit {
     };
   	let retorno: any;
     let retornoTrocas:any = this.trocaServ.listar(user);
-    console.log('chamada da função')
     
     retornoTrocas.subscribe(res => {
-      console.log('res '+ res);
 
       if(cardapio.check == true){
 
@@ -105,26 +104,32 @@ export class CardapioComponent implements OnInit {
       }
 
       retorno.subscribe(res => {
-        console.log(cardapio.nome_dia_da_semana + ' atualisado');
         this.snack.open('Sucesso ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
         this.progress.offProgress();
+        this.tryies = 0;
       },
       erro => {
         console.log(erro);
         if(erro.status == 201){
           this.snack.open('Sucesso ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
           this.progress.offProgress();   
+          this.tryies = 0;
         } else {
-          this.snack.open('Erro ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
-          this.progress.offProgress();
+          
+          
+          if(this.tryies < 3){ 
+            this.confirma(cardapio);
+            this.tryies++;
+          } else {
+            this.snack.open('Erro ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
+            this.progress.offProgress();
+          }
         }    
       });
     }, erro => {
         console.log('erro no get trocas ' + erro);
+        this.snack.open('Parece que você está offline', 'Fechar', { duration: 3000 });
         this.progress.offProgress();
-    });     
-
-  	console.log(this.cardapios);
-  	
+    });       	
   }
 }

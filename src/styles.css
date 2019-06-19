@@ -20,7 +20,7 @@ body {
 
 a{ text-decoration: none; cursor: pointer; }
 
-#header{background-color: black!important; height: 7vh;}
+#header{background-color: black!important; height: 7vh; top: 0; position: sticky; z-index: 2;}
 #menu{ position:  fixed; float: left; z-index: 2;}
 #nome-menu{ padding: 10px; float: right;}
 
@@ -95,8 +95,8 @@ a{ text-decoration: none; cursor: pointer; }
 /*tela de login ------------------------*/
 
 	.container{	width: 60%; display: flex; margin: 20px auto;}
-	#login{width: 500px;}
-	#login .mat-tab-group{ margin: 40px auto 50vh auto !important; }
+	#login, #cadastro{width: 500px;}
+	#login .mat-tab-group, #cadastro { margin: 40px auto 50vh auto !important; }
 	.card-login{ padding: 10 40px!important;} 
 	.mat-flat-button{width: 100%;}	
 	.mat-drawer{ width: 30%; }
@@ -124,8 +124,8 @@ a{ text-decoration: none; cursor: pointer; }
 /*tela de login ------------------------*/
 
 	.container{	width: 60%; display: flex; margin: 0 auto; }
-	#login{width: 500px; margin-top: 50px;}
-	#login .mat-tab-group{ margin: 40px auto 50vh auto !important; }
+	#login, #cadastro{width: 500px; margin-top: 50px;}
+	#login .mat-tab-group, #cadastro { margin: 40px auto 50vh auto !important; }
 	.card-login{  padding: 10 40px!important;} 
 	.mat-flat-button{width: 100%;}
 	.mat-drawer{ width: 20%; }

@@ -38,6 +38,9 @@ import { TrocasComponent } from './components/adm/trocas/trocas.component';
 import { FeedbacksComponent } from './components/adm/feedbacks/feedbacks.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { CadastroComponent } from './components/adm/cadastro/cadastro.component';
+import { FiltroTrocaPipe } from './pipes/filtro-troca.pipe';
+import { FiltroIdPipe } from './pipes/filtro-id.pipe';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,10 @@ import { environment } from '../environments/environment';
     FeedbackComponent,
     AlterarCardapioComponent,
     TrocasComponent,
-    FeedbacksComponent
+    FeedbacksComponent,
+    CadastroComponent,
+    FiltroTrocaPipe,
+    FiltroIdPipe
   ],
   imports: [
     FormsModule,

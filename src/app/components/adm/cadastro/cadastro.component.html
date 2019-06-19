@@ -1,0 +1,29 @@
+<section class="container" id="cadastro">
+   
+  <mat-card class="card-login">
+    <form id="singin">
+        <mat-form-field appearance="outline" color="accent" >
+          <mat-label>Usuário</mat-label>
+          <input name="userNovo" autocomplete="false" matInput placeholder="jamal123" required [(ngModel)]="usuarioNovo.user" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="accent" >
+          <mat-label>Nome</mat-label>
+          <input name="nomeNovo" autocomplete="false" matInput placeholder="Mario" required [(ngModel)]="usuarioNovo.nome"  autocomplete="off">
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="accent" >
+          <mat-label>Email</mat-label>
+          <input name="emailNovo" autocomplete="false" matInput placeholder="mario@smn.com.br" required [(ngModel)]="usuarioNovo.email" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="accent"  >
+          <mat-label>Senha</mat-label>
+          <input name="senhaNovo" autocomplete="false" matInput type="password" required="" placeholder="*****" [(ngModel)]="usuarioNovo.senha">
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="accent"  >
+          <mat-label>Confirme a senha</mat-label>
+          <input name="confirmaNovo" autocomplete="false" matInput type="password" required="" placeholder="*****" [(ngModel)]="usuarioNovo.confirma">
+        </mat-form-field>
+        <button mat-flat-button color="accent" (click)="singin()"><strong>Cadastrar</strong></button>
+      </form>
+  </mat-card> 
+   
+</section>
