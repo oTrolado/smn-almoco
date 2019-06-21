@@ -45,28 +45,28 @@ export class CadastroComponent implements OnInit {
 	  					if(this.preenchido(this.usuarioNovo.senha)){
 	  						if(this.preenchido(this.usuarioNovo.confirma) && 
 	  						   this.usuarioNovo.confirma == this.usuarioNovo.senha){
-	  							this.snack.open('Cadastrando... :)', 'Fechar', { duration: 3000 });
+	  							this.snack.open('Cadastrando... :)', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
 	  							return true;
 	  						} 
-	  						this.snack.open('Confirme a senha por favor ;)', 'Fechar', { duration: 3000 });
+	  						this.snack.open('Confirme a senha por favor ;)', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
 	  						return false;
 	  					}
-	  					this.snack.open('Preciso de uma senha senha :(', 'Fechar', { duration: 3000 });
+	  					this.snack.open('Preciso de uma senha senha :(', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
 	  					return false;
 	  				}
-	  				this.snack.open('Coloque um email valido ;)', 'Fechar', { duration: 3000 });
+	  				this.snack.open('Coloque um email valido ;)', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
 	  				return false;
 	  			}
-	  			this.snack.open('Você não preencheu o email :(', 'Fechar', { duration: 3000 });
+	  			this.snack.open('Você não preencheu o email :(', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
 	  			return false;
 	  		}
-	  		this.snack.open('Você não preencheu a senha :(', 'Fechar', { duration: 3000 });
+	  		this.snack.open('Você não preencheu a senha :(', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
 	  		return false;
 	  	}
-	  	this.snack.open('Hey qual o nome???', 'Fechar', { duration: 3000 });
+	  	this.snack.open('Hey qual o nome???', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
 	  	return false;
   	}
-  	this.snack.open('Você não preencheu o usuario :(', 'Fechar', { duration: 3000 });
+  	this.snack.open('Você não preencheu o usuario :(', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
   	return false;	
   }
 
@@ -78,17 +78,17 @@ export class CadastroComponent implements OnInit {
 			let retorno: any = this.serv.cadastrar(this.usuarioNovo);
 			retorno.subscribe(res => {
 					this.progress.offProgress();
-          this.snack.open('Usuário cadastrado com sucesso :)' + this.usuarioNovo.nome, 'Fechar', { duration: 3000 });
+          this.snack.open('Usuário cadastrado com sucesso :) ' + this.usuarioNovo.nome, 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
           this.usuarioNovo = {};
 				},
 				erro => {
 					if(erro.status == 201){
 						this.progress.offProgress();
-            this.snack.open('Usuário cadastrado com sucesso :)' + this.usuarioNovo.nome, 'Fechar', { duration: 3000 });
+            this.snack.open('Usuário cadastrado com sucesso :) ' + this.usuarioNovo.nome, 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
             this.usuarioNovo = {};
 					} else {
 						this.progress.offProgress();
-						this.snack.open('Erro tente de novo mais tarde :(', 'Fechar', { duration: 3000 });						
+						this.snack.open('Erro tente de novo mais tarde :(', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });						
 					}
 
 				}

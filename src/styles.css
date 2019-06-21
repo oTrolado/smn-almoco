@@ -27,7 +27,7 @@ a{ text-decoration: none; cursor: pointer; }
 #footer{
     z-index: 2;
     text-align: center;
-    height: 50px;
+    height: 40px;
     font-size:15px;
     color: white;
 	background-color: #00c853!important;
@@ -51,8 +51,9 @@ a{ text-decoration: none; cursor: pointer; }
 .mat-expansion-panel-header{ position: relative; }
 
 .badge{ top: 3px; right: 40px; position: absolute!important; }
-.container{display: flex; flex-direction: column; box-sizing: border-box; padding-bottom: 10px;}
+.container{display: flex; flex-direction: column; box-sizing: border-box; padding: 10px 0;}
 
+.default-snackbar {background-color: #8b8b8b !important; color: white !important;}
 
 @media screen and (max-width: 480px){
 	/*tela de login ------------------------*/
@@ -63,14 +64,19 @@ a{ text-decoration: none; cursor: pointer; }
 
 	.mat-flat-button{ width: 100%; }
 	
+	.mat-card{ padding: 5px !important; }
+
 	.mat-drawer{ width: 80%; }
 
 	.noMobile{display: none;}
+
+	.tab-cardapio th{ font-size: 15px; }
+	.tab-cardapio td{ font-size: 15px; }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px){
 	/*tela de login ------------------------*/
-	.container { height: 86vh; width: 90%; margin: auto}
+	.container { height: 86vh; width: 90%; margin: auto; max-width: 400px;}
 
 	.mat-tab-group{	width: 100%; margin: 25px auto 5px auto;}
 	
@@ -84,8 +90,8 @@ a{ text-decoration: none; cursor: pointer; }
 
 	/*cardapio------------------------------*/
 
-	.tab-cardapio{ padding: 20px; }
-	.tab-cardapio th{ font-size: 25px; padding: 20px;}
+	.tab-cardapio{ padding: 20px; width: 100%; }
+	.tab-cardapio th{ font-size: 25px; padding: 20px; width: 200px;}
 	.tab-cardapio td{ font-size: 25px; padding: 20px; }
 }
 
@@ -100,8 +106,8 @@ a{ text-decoration: none; cursor: pointer; }
 	.mat-drawer{ width: 30%; }
 	
 /*cardapio------------------------------*/
-	.tab-cardapio{ padding: 20px; }
-	.tab-cardapio th{ font-size: 25px; padding: 20px; }
+	.tab-cardapio{ padding: 20px; width: 100%;}
+	.tab-cardapio th{ font-size: 25px; padding: 20px; width: 200px;}
 	.tab-cardapio td{ font-size: 25px; padding: 20px; }
 	.mat-tab-body-content{ overflow: hidden!important; }
 	#cardapio{margin: 0 auto 0 auto!important; width: 70%!important;}
@@ -129,8 +135,8 @@ a{ text-decoration: none; cursor: pointer; }
 	.mat-tab-body-content{ overflow: hidden!important; }
 
 /*cardapio------------------------------*/
-	.tab-cardapio{ padding: 20px; }
-	.tab-cardapio th{ font-size: 25px; padding: 20px; }
+	.tab-cardapio{ padding: 20px; width: 100%;}
+	.tab-cardapio th{ font-size: 25px; padding: 20px; width: 200px;}
 	.tab-cardapio td{ font-size: 25px; padding: 20px; }
 	#cardapio{margin: 0 auto 0 auto !important; width: 70%!important;}
 	#cardapios{margin-bottom: 0!important}

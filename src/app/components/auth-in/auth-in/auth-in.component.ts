@@ -35,13 +35,13 @@ export class AuthInComponent implements OnInit {
   validaLogin() {
   	if(this.preenchido(this.usuario.user)){
   		if(this.preenchido(this.usuario.senha)){
-  			this.snack.open('Logando... ;)', 'Fechar', { duration: 3000 });
+  			this.snack.open('Logando... ;)', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
   			return true;
   		}
-  		this.snack.open('Você não preencheu a senha :(', 'Fechar', { duration: 3000 });
+  		this.snack.open('Você não preencheu a senha :(', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
   		return false;
   	}
-  	this.snack.open('Você não preencheu seu usuario :(', 'Fechar', { duration: 3000 });
+  	this.snack.open('Você não preencheu seu usuario :(', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
   	return false;
   }
 
@@ -54,14 +54,14 @@ export class AuthInComponent implements OnInit {
   			retorno.subscribe(res => {
   					this.usuario = res;
   					this.progress.offProgress();
-  					this.snack.open('Logado com sucesso ' + this.usuario.nome, 'Fechar', { duration: 3000 });
+  					this.snack.open('Logado com sucesso ' + this.usuario.nome, 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
   					this.serv.validar(true, this.usuario);
   					this.progress.offProgress();	
   					this.router.navigate(['cardapio']);
   				}, 
   				erro => { 
   					this.progress.offProgress();
-  					this.snack.open('Erro tente de novo mais tarde', 'Fechar', { duration: 3000 });
+  					this.snack.open('Erro tente de novo mais tarde', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
   					console.error(erro);
   					this.usuario.senha = "";
   				}

@@ -56,7 +56,7 @@ export class CardapioComponent implements OnInit {
         this.progress.offProgress();
   		},
   		erro => {
-  			this.snack.open('Erro encontrado ' + erro, 'Fechar', { duration: 3000 });
+  			this.snack.open('Erro encontrado ' + erro, 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
         this.progress.offProgress();
 		 });
   }
@@ -104,14 +104,14 @@ export class CardapioComponent implements OnInit {
       }
 
       retorno.subscribe(res => {
-        this.snack.open('Sucesso ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
+        this.snack.open('Sucesso ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
         this.progress.offProgress();
         this.tryies = 0;
       },
       erro => {
         console.log(erro);
         if(erro.status == 201){
-          this.snack.open('Sucesso ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
+          this.snack.open('Sucesso ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
           this.progress.offProgress();   
           this.tryies = 0;
         } else {
@@ -121,14 +121,14 @@ export class CardapioComponent implements OnInit {
             this.confirma(cardapio);
             this.tryies++;
           } else {
-            this.snack.open('Erro ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
+            this.snack.open('Erro ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
             this.progress.offProgress();
           }
         }    
       });
     }, erro => {
         console.log('erro no get trocas ' + erro);
-        this.snack.open('Parece que você está offline', 'Fechar', { duration: 3000 });
+        this.snack.open('Parece que você está offline', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
         this.progress.offProgress();
     });       	
   }

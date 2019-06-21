@@ -48,7 +48,7 @@ export class AlterarCardapioComponent implements OnInit {
 		Object.keys(cardapio).filter(item => cardapio[item] === '').map(item => {
 			teste = false;
 			console.log(item);
-			this.snack.open(item + ' está vazio', 'Fechar', { duration: 3000 })
+			this.snack.open(item + ' está vazio', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] })
 		});
 
 		if(teste){
@@ -56,14 +56,14 @@ export class AlterarCardapioComponent implements OnInit {
 			let retorno: any = this.cardapioS.alterar(cardapio);
 			retorno.subscribe(res => {
 				this.progress.offProgress();
-				this.snack.open('Cardápio da '+ cardapio.nome_dia_da_semana +' atualizado', 'Fechar', { duration: 3000 });
+				this.snack.open('Cardápio da '+ cardapio.nome_dia_da_semana +' atualizado', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
 			}, erro => {
 				this.progress.offProgress();
 				console.log(erro);
 			});
 		}
 	} else {
-		this.snack.open('A data não é uma '+ cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
+		this.snack.open('A data não é uma '+ cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
 	}
   }
 }

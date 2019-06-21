@@ -39,23 +39,23 @@ export class FeedbackComponent implements OnInit {
         this.sugestao.user = this.usuario._id
         let retorno:any = this.feedServ.salvar(this.sugestao);
         retorno.subscribe(res => {
-          this.snack.open('Agredecemos seu feedback ;) ' + this.usuario.nome, 'Fechar', { duration: 3000 });
+          this.snack.open('Agredecemos seu feedback ;) ' + this.usuario.nome, 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
           this.progress.offProgress();
         }, erro => {
           if(erro.status == 201){
-            this.snack.open('Agredecemos seu feedback ' + this.usuario.nome, 'Fechar', { duration: 3000 });
+            this.snack.open('Agredecemos seu feedback ' + this.usuario.nome, 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
             this.progress.offProgress();
           } else{
-            this.snack.open('Aconteceu algum erro com a conexão :(', 'Fechar', { duration: 3000 });
+            this.snack.open('Aconteceu algum erro com a conexão :(', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
             this.progress.offProgress();
           }
         });
         this.sugestao = {};
       } else {
-        this.snack.open('Por favor escreva algo para nós', 'Fechar', { duration: 3000 });
+        this.snack.open('Por favor escreva algo para nós', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
       }
     } else {
-      this.snack.open('Por favor selecione o tipo', 'Fechar', { duration: 3000 });
+      this.snack.open('Por favor selecione o tipo', 'Fechar', { duration: 3000, panelClass: ['default-snackbar'] });
     }
   }
 }
