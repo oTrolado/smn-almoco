@@ -27,11 +27,24 @@ a{ text-decoration: none; cursor: pointer; }
 #footer{
     z-index: 2;
     text-align: center;
-    height: 40px;
+    height: 50px;
     font-size:15px;
     color: white;
 	background-color: #00c853!important;
 }
+
+#notCard {
+	width: 300px;
+    position: fixed;
+    left: auto;
+    right: 0;
+	top: 49px;
+	transition: .5s transform cubic-bezier(0.4, 0.0, 0.2, 1);
+	box-sizing: border-box;
+	z-index: 3;
+}
+
+#notCard div { position: relative;}
 
 .navs{margin-top: 15vh;}
 	.navs .mat-list-item:hover{ background-color: white; color: #00c853; transition: 1s;}
@@ -72,6 +85,8 @@ a{ text-decoration: none; cursor: pointer; }
 
 	.tab-cardapio th{ font-size: 15px; }
 	.tab-cardapio td{ font-size: 15px; }
+
+	#notCard { width: 100%; }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px){

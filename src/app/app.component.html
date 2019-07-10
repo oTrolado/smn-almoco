@@ -6,6 +6,11 @@
 		</button>
 	</div>
 	<span id="smn-topo" class="">{{ title }}</span>
+	<button mat-icon-button aria-label="Example icon-button with a heart icon" color="primary" *ngIf="mostrarMenu"
+		(click)="notifyToggle()" [disabled]="notifications.length < 1">
+		<mat-icon [matBadge]="activeNots" matBadgePosition="above after" color="primary">
+			notification_important</mat-icon>
+	</button>
 </mat-toolbar>
 
 <mat-drawer-container class="example-container" [hasBackdrop]="true">
@@ -46,6 +51,19 @@
 		</mat-list>
 	</mat-drawer>
 	<mat-drawer-content>
+		<mat-card id="notCard" [ngStyle]="{'transform': notifyUser ? 'translateY(0%)' : 'translateY(-100%)'}">
+			<div style="cursor: pointer" (click)="clearNots()">Remover Todas</div>
+			<div *ngFor="let notification of notifications" (click)="readNot([notification._id])">
+				<section class="notification-item"
+					[ngStyle]="{'color': notification.state == 'created' ? 'white;' : 'rgba(255,255,255,.4)'}">
+					{{notification.message}}
+					<mat-icon mat-icon-button color="primary" (click)="deleteNot(notification._id, $event)">
+						delete
+					</mat-icon>
+				</section>
+				<mat-divider></mat-divider>
+			</div>
+		</mat-card>
 		<router-outlet></router-outlet>
 	</mat-drawer-content>
 </mat-drawer-container>
